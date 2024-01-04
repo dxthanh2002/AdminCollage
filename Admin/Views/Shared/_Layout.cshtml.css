@@ -23,6 +23,10 @@ a {
   border-color: #1861ac;
 }
 
+.nav-sidebar .nav-item.active {
+  background-color: #007bff; /* Set your desired highlight color */
+}
+
 .border-top {
   border-top: 1px solid #e5e5e5;
 }

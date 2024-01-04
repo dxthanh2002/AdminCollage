@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\ASP.net\\Admin\\Admin.csproj": {}
+    "E:\\RiderProject\\AdminCollage\\Admin\\Admin.csproj": {}
   },
   "projects": {
-    "D:\\ASP.net\\Admin\\Admin.csproj": {
+    "E:\\RiderProject\\AdminCollage\\Admin\\Admin.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\ASP.net\\Admin\\Admin.csproj",
+        "projectUniqueName": "E:\\RiderProject\\AdminCollage\\Admin\\Admin.csproj",
         "projectName": "Admin",
-        "projectPath": "D:\\ASP.net\\Admin\\Admin.csproj",
-        "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
-        "outputPath": "D:\\ASP.net\\Admin\\obj\\",
+        "projectPath": "E:\\RiderProject\\AdminCollage\\Admin\\Admin.csproj",
+        "packagesPath": "C:\\Users\\maxxm\\.nuget\\packages\\",
+        "outputPath": "E:\\RiderProject\\AdminCollage\\Admin\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\maxxm\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

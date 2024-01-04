@@ -23,6 +23,10 @@ a[b-7xb81emaud] {
   border-color: #1861ac;
 }
 
+.nav-sidebar .nav-item.active[b-7xb81emaud] {
+  background-color: #007bff; /* Set your desired highlight color */
+}
+
 .border-top[b-7xb81emaud] {
   border-top: 1px solid #e5e5e5;
 }
