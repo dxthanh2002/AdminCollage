@@ -3,10 +3,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Hosting;
 using static System.Net.Mime.MediaTypeNames;
 using Admin.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace Admin.Data
 {
-    public class DatabaseContext : DbContext
+    public class DatabaseContext : IdentityDbContext<ApplicationUser>
     {
         public DatabaseContext(DbContextOptions<DatabaseContext> options)
                 : base(options)
