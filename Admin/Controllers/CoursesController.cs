@@ -57,23 +57,12 @@ namespace Admin.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Title,Detail,Name,DurationYear,EligibilityCriteria,Status,CreatedAt,LastModifiedAt")] Course course)
-        {
-            if (ModelState.IsValid)
-            { 
-                try
-                {
+        {           
                     _context.Add(course);
                     await _context.SaveChangesAsync();
                     return RedirectToAction(nameof(Index));
-                }
-                catch (Exception ex)
-                {
-
-                    return View(course);
-                }
-             
-            }
-            return View(course);
+                    return View(course);   
+            
         }
 
         // GET: Courses/Edit/5

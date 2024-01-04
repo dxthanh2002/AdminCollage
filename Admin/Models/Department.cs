@@ -17,7 +17,7 @@ namespace Admin.Models
         public Status Status { get; set; }
         [DisplayName("Create Time")]
         public DateTime CreatedAt { get; set; }
-        [DisplayName("Create by")]
+        [DisplayName("Last Modified")]
   
         public DateTime LastModifiedAt { get; set; }
 
