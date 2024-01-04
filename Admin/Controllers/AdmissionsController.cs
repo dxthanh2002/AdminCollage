@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Admin.Data;
 using Admin.Models;
+using Admin.Models.Enums;
 
 namespace Admin.Controllers
 {
@@ -81,6 +82,18 @@ namespace Admin.Controllers
             {
                 return NotFound();
             }
+
+            ViewBag.Gender = Enum.GetValues(typeof(Gender)).Cast<Gender>().Select(x => new SelectListItem
+            {
+                Value = ((int) x).ToString(),
+                Text = x.ToString()
+            });
+            ViewBag.Status = Enum.GetValues(typeof(Status)).Cast<Status>().Select(x => new SelectListItem
+            {
+                Value = ((int) x).ToString(),
+                Text = x.ToString()
+            });
+            
             return View(admission);
         }
 
