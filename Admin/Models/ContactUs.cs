@@ -19,10 +19,9 @@ namespace Admin.Models
         [DisplayName("Modify Time")]
         public DateTime CreatedAt { get; set; }
         [DisplayName("Create id")]
-        public int CreatedById { get; set; }
-        [DisplayName("Last Modify Time")]
+
         public DateTime LastModifiedAt { get; set; }
-        [DisplayName("Last Modify User")]
-        public int LastModifiedBy { get; set; }
+
+
     }
 }

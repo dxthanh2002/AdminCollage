@@ -56,7 +56,7 @@ namespace Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Title,Detail,Name,DurationYear,EligibilityCriteria,Status,CreatedAt,CreatedById,LastModifiedAt,LastModifiedBy")] Course course)
+        public async Task<IActionResult> Create([Bind("Id,Title,Detail,Name,DurationYear,EligibilityCriteria,Status,CreatedAt,LastModifiedAt")] Course course)
         {
             if (ModelState.IsValid)
             { 
@@ -97,7 +97,7 @@ namespace Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Detail,Name,DurationYear,EligibilityCriteria,Status,CreatedAt,CreatedById,LastModifiedAt,LastModifiedBy")] Course course)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Detail,Name,DurationYear,EligibilityCriteria,Status,CreatedAt,LastModifiedAt")] Course course)
         {
             if (id != course.Id)
             {

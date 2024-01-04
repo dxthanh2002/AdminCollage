@@ -21,9 +21,8 @@ namespace Admin.Models
         [DisplayName("Status")]
         public Status Status { get; set; }
         public DateTime CreatedAt { get; set; }
-        public int CreatedById { get; set; }
         public DateTime LastModifiedAt { get; set; }
-        public int LastModifiedBy { get; set; }
+
     }
 }
 

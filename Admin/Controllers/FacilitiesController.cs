@@ -56,7 +56,7 @@ namespace Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,Description,OpeningHour,ContactInformation,Status,CreatedAt,CreatedById,LastModifiedAt,LastModifiedBy")] Facility facility)
+        public async Task<IActionResult> Create([Bind("Id,Name,Description,OpeningHour,ContactInformation,Status,CreatedAt,LastModifiedAt")] Facility facility)
         {
             if (ModelState.IsValid)
             {
@@ -88,7 +88,7 @@ namespace Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Description,OpeningHour,ContactInformation,Status,CreatedAt,CreatedById,LastModifiedAt,LastModifiedBy")] Facility facility)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Description,OpeningHour,ContactInformation,Status,CreatedAt,LastModifiedAt")] Facility facility)
         {
             if (id != facility.Id)
             {
