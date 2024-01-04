@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\ASP.net\\Admin\\Admin.csproj": {}
+    "D:\\ASP.net\\AdminCollage\\Admin\\Admin.csproj": {}
   },
   "projects": {
-    "D:\\ASP.net\\Admin\\Admin.csproj": {
+    "D:\\ASP.net\\AdminCollage\\Admin\\Admin.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\ASP.net\\Admin\\Admin.csproj",
+        "projectUniqueName": "D:\\ASP.net\\AdminCollage\\Admin\\Admin.csproj",
         "projectName": "Admin",
-        "projectPath": "D:\\ASP.net\\Admin\\Admin.csproj",
+        "projectPath": "D:\\ASP.net\\AdminCollage\\Admin\\Admin.csproj",
         "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
-        "outputPath": "D:\\ASP.net\\Admin\\obj\\",
+        "outputPath": "D:\\ASP.net\\AdminCollage\\Admin\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

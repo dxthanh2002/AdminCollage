@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Sn1F86zKtfxxBwtVaMJD61mstUirjFjJEEWFVzMtsEm4Vfd7wIngXjgU63rZ6csO0JmeQKRAj6IPVpCV+QpWWg==",
+  "dgSpecHash": "Ys4P1eIw5ik4Tb1nthQCRB9CoGzeWhsT4BiGUwvE2Zuh7CFBK7V+Y1yi1G19DfRZ9S3I4kYW12XVsW1jKyqmfg==",
   "success": true,
-  "projectFilePath": "D:\\ASP.net\\Admin\\Admin.csproj",
+  "projectFilePath": "D:\\ASP.net\\AdminCollage\\Admin\\Admin.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\admin\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\admin\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

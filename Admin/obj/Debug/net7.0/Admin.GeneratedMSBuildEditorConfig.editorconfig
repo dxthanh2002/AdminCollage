@@ -9,217 +9,217 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Admin
 build_property.RootNamespace = Admin
-build_property.ProjectDir = D:\ASP.net\Admin\
+build_property.ProjectDir = D:\ASP.net\AdminCollage\Admin\
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\ASP.net\Admin
+build_property.MSBuildProjectDirectory = D:\ASP.net\AdminCollage\Admin
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/ASP.net/Admin/Views/Admissions/Create.cshtml]
+[D:/ASP.net/AdminCollage/Admin/Views/Admissions/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaXNzaW9uc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ASP.net/Admin/Views/Admissions/Delete.cshtml]
+[D:/ASP.net/AdminCollage/Admin/Views/Admissions/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaXNzaW9uc1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ASP.net/Admin/Views/Admissions/Details.cshtml]
+[D:/ASP.net/AdminCollage/Admin/Views/Admissions/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaXNzaW9uc1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ASP.net/Admin/Views/Admissions/Edit.cshtml]
+[D:/ASP.net/AdminCollage/Admin/Views/Admissions/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaXNzaW9uc1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ASP.net/Admin/Views/Admissions/Index.cshtml]
+[D:/ASP.net/AdminCollage/Admin/Views/Admissions/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaXNzaW9uc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ASP.net/Admin/Views/ContactUs/Create.cshtml]
+[D:/ASP.net/AdminCollage/Admin/Views/ContactUs/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdFVzXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ASP.net/Admin/Views/ContactUs/Delete.cshtml]
+[D:/ASP.net/AdminCollage/Admin/Views/ContactUs/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdFVzXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ASP.net/Admin/Views/ContactUs/Details.cshtml]
+[D:/ASP.net/AdminCollage/Admin/Views/ContactUs/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdFVzXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ASP.net/Admin/Views/ContactUs/Edit.cshtml]
+[D:/ASP.net/AdminCollage/Admin/Views/ContactUs/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdFVzXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ASP.net/Admin/Views/ContactUs/Index.cshtml]
+[D:/ASP.net/AdminCollage/Admin/Views/ContactUs/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdFVzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ASP.net/Admin/Views/Courses/Create.cshtml]
+[D:/ASP.net/AdminCollage/Admin/Views/Courses/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ASP.net/Admin/Views/Courses/Delete.cshtml]
+[D:/ASP.net/AdminCollage/Admin/Views/Courses/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlc1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ASP.net/Admin/Views/Courses/Details.cshtml]
+[D:/ASP.net/AdminCollage/Admin/Views/Courses/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlc1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ASP.net/Admin/Views/Courses/Edit.cshtml]
+[D:/ASP.net/AdminCollage/Admin/Views/Courses/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlc1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ASP.net/Admin/Views/Courses/Index.cshtml]
+[D:/ASP.net/AdminCollage/Admin/Views/Courses/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ASP.net/Admin/Views/Departments/Create.cshtml]
+[D:/ASP.net/AdminCollage/Admin/Views/Departments/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwYXJ0bWVudHNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ASP.net/Admin/Views/Departments/Delete.cshtml]
+[D:/ASP.net/AdminCollage/Admin/Views/Departments/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwYXJ0bWVudHNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ASP.net/Admin/Views/Departments/Details.cshtml]
+[D:/ASP.net/AdminCollage/Admin/Views/Departments/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwYXJ0bWVudHNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ASP.net/Admin/Views/Departments/Edit.cshtml]
+[D:/ASP.net/AdminCollage/Admin/Views/Departments/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwYXJ0bWVudHNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ASP.net/Admin/Views/Departments/Index.cshtml]
+[D:/ASP.net/AdminCollage/Admin/Views/Departments/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwYXJ0bWVudHNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ASP.net/Admin/Views/Facilities/Create.cshtml]
+[D:/ASP.net/AdminCollage/Admin/Views/Facilities/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmFjaWxpdGllc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ASP.net/Admin/Views/Facilities/Delete.cshtml]
+[D:/ASP.net/AdminCollage/Admin/Views/Facilities/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmFjaWxpdGllc1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ASP.net/Admin/Views/Facilities/Details.cshtml]
+[D:/ASP.net/AdminCollage/Admin/Views/Facilities/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmFjaWxpdGllc1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ASP.net/Admin/Views/Facilities/Edit.cshtml]
+[D:/ASP.net/AdminCollage/Admin/Views/Facilities/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmFjaWxpdGllc1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ASP.net/Admin/Views/Facilities/Index.cshtml]
+[D:/ASP.net/AdminCollage/Admin/Views/Facilities/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmFjaWxpdGllc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ASP.net/Admin/Views/Faculties/Create.cshtml]
+[D:/ASP.net/AdminCollage/Admin/Views/Faculties/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmFjdWx0aWVzXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ASP.net/Admin/Views/Faculties/Delete.cshtml]
+[D:/ASP.net/AdminCollage/Admin/Views/Faculties/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmFjdWx0aWVzXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ASP.net/Admin/Views/Faculties/Details.cshtml]
+[D:/ASP.net/AdminCollage/Admin/Views/Faculties/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmFjdWx0aWVzXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ASP.net/Admin/Views/Faculties/Edit.cshtml]
+[D:/ASP.net/AdminCollage/Admin/Views/Faculties/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmFjdWx0aWVzXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ASP.net/Admin/Views/Faculties/Index.cshtml]
+[D:/ASP.net/AdminCollage/Admin/Views/Faculties/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmFjdWx0aWVzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ASP.net/Admin/Views/Feedbacks/Create.cshtml]
+[D:/ASP.net/AdminCollage/Admin/Views/Feedbacks/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmVlZGJhY2tzXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ASP.net/Admin/Views/Feedbacks/Delete.cshtml]
+[D:/ASP.net/AdminCollage/Admin/Views/Feedbacks/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmVlZGJhY2tzXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ASP.net/Admin/Views/Feedbacks/Details.cshtml]
+[D:/ASP.net/AdminCollage/Admin/Views/Feedbacks/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmVlZGJhY2tzXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ASP.net/Admin/Views/Feedbacks/Edit.cshtml]
+[D:/ASP.net/AdminCollage/Admin/Views/Feedbacks/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmVlZGJhY2tzXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ASP.net/Admin/Views/Feedbacks/Index.cshtml]
+[D:/ASP.net/AdminCollage/Admin/Views/Feedbacks/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmVlZGJhY2tzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ASP.net/Admin/Views/Home/Index.cshtml]
+[D:/ASP.net/AdminCollage/Admin/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ASP.net/Admin/Views/Home/Privacy.cshtml]
+[D:/ASP.net/AdminCollage/Admin/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ASP.net/Admin/Views/Images/Create.cshtml]
+[D:/ASP.net/AdminCollage/Admin/Views/Images/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW1hZ2VzXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ASP.net/Admin/Views/Images/Delete.cshtml]
+[D:/ASP.net/AdminCollage/Admin/Views/Images/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW1hZ2VzXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ASP.net/Admin/Views/Images/Details.cshtml]
+[D:/ASP.net/AdminCollage/Admin/Views/Images/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW1hZ2VzXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ASP.net/Admin/Views/Images/Edit.cshtml]
+[D:/ASP.net/AdminCollage/Admin/Views/Images/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW1hZ2VzXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ASP.net/Admin/Views/Images/Index.cshtml]
+[D:/ASP.net/AdminCollage/Admin/Views/Images/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW1hZ2VzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ASP.net/Admin/Views/Shared/Error.cshtml]
+[D:/ASP.net/AdminCollage/Admin/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ASP.net/Admin/Views/Shared/_ValidationScriptsPartial.cshtml]
+[D:/ASP.net/AdminCollage/Admin/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ASP.net/Admin/Views/Students/Create.cshtml]
+[D:/ASP.net/AdminCollage/Admin/Views/Students/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudHNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ASP.net/Admin/Views/Students/Delete.cshtml]
+[D:/ASP.net/AdminCollage/Admin/Views/Students/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudHNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ASP.net/Admin/Views/Students/Details.cshtml]
+[D:/ASP.net/AdminCollage/Admin/Views/Students/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudHNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ASP.net/Admin/Views/Students/Edit.cshtml]
+[D:/ASP.net/AdminCollage/Admin/Views/Students/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudHNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ASP.net/Admin/Views/Students/Index.cshtml]
+[D:/ASP.net/AdminCollage/Admin/Views/Students/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudHNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ASP.net/Admin/Views/_ViewImports.cshtml]
+[D:/ASP.net/AdminCollage/Admin/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ASP.net/Admin/Views/_ViewStart.cshtml]
+[D:/ASP.net/AdminCollage/Admin/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ASP.net/Admin/Views/Shared/_Layout.cshtml]
+[D:/ASP.net/AdminCollage/Admin/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-7xb81emaud
