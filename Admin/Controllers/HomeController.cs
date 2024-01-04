@@ -1,6 +1,7 @@
 ﻿using Admin.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using Microsoft.IdentityModel.Tokens;
 
 namespace Admin.Controllers
 {
@@ -15,6 +16,11 @@ namespace Admin.Controllers
 
         public IActionResult Index()
         {
+            HttpContext.Request.Cookies.TryGetValue("token", out var token);
+            if (token.IsNullOrEmpty())
+            {
+                return RedirectToAction("Login", "User");
+            }
             return View();
         }
 
