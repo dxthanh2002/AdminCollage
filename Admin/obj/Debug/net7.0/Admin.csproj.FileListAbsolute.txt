@@ -504,3 +504,10 @@ D:\ASP.net\AdminCollage\Admin\obj\Debug\net7.0\refint\Admin.dll
 D:\ASP.net\AdminCollage\Admin\obj\Debug\net7.0\Admin.pdb
 D:\ASP.net\AdminCollage\Admin\obj\Debug\net7.0\Admin.genruntimeconfig.cache
 D:\ASP.net\AdminCollage\Admin\obj\Debug\net7.0\ref\Admin.dll
+D:\ASP.net\AdminCollage\Admin\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\ASP.net\AdminCollage\Admin\bin\Debug\net7.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+D:\ASP.net\AdminCollage\Admin\bin\Debug\net7.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+D:\ASP.net\AdminCollage\Admin\bin\Debug\net7.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+D:\ASP.net\AdminCollage\Admin\bin\Debug\net7.0\Microsoft.Extensions.Identity.Core.dll
+D:\ASP.net\AdminCollage\Admin\bin\Debug\net7.0\Microsoft.Extensions.Identity.Stores.dll
+D:\ASP.net\AdminCollage\Admin\bin\Debug\net7.0\Microsoft.Extensions.Options.dll
