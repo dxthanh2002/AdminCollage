@@ -54,15 +54,11 @@
             <th>
                 @Html.DisplayNameFor(model => model.CreatedAt)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CreatedById)
-            </th>
+
             <th>
                 @Html.DisplayNameFor(model => model.LastModifiedAt)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.LastModifiedBy)
-            </th>
+
             <th>Action</th>
         </tr>
     </thead>
@@ -108,15 +104,11 @@
             <td>
                 @Html.DisplayFor(modelItem => item.CreatedAt)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CreatedById)
-            </td>
+
             <td>
                 @Html.DisplayFor(modelItem => item.LastModifiedAt)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.LastModifiedBy)
-            </td>
+
             <td>
               <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary"><i class="fa fa-pen"></i>Edit</a> |
               <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-secondary"><i class="fa fa-eye"></i>Details</a> |
