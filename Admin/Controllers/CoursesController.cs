@@ -59,10 +59,19 @@ namespace Admin.Controllers
         public async Task<IActionResult> Create([Bind("Id,Title,Detail,Name,DurationYear,EligibilityCriteria,Status,CreatedAt,CreatedById,LastModifiedAt,LastModifiedBy")] Course course)
         {
             if (ModelState.IsValid)
-            {
-                _context.Add(course);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+            { 
+                try
+                {
+                    _context.Add(course);
+                    await _context.SaveChangesAsync();
+                    return RedirectToAction(nameof(Index));
+                }
+                catch (Exception ex)
+                {
+
+                    return View(course);
+                }
+             
             }
             return View(course);
         }

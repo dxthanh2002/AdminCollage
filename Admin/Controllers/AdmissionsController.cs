@@ -65,6 +65,7 @@ namespace Admin.Controllers
                 return RedirectToAction(nameof(Index));
             }
             return View(admission);
+
         }
 
         // GET: Admissions/Edit/5
