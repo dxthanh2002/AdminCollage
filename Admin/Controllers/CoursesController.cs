@@ -56,7 +56,7 @@ namespace Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Title,Detail,Name,DurationYear,EligibilityCriteria,Status,CreatedAt,LastModifiedAt")] Course course)
+        public async Task<IActionResult> Create([Bind("Id,Title,Detail,Name,DurationYear,EligibilityCriteria,Status,CreatedAt,0,LastModifiedAt,0")] Course course)
         {           
                     _context.Add(course);
                     await _context.SaveChangesAsync();
@@ -86,15 +86,14 @@ namespace Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Detail,Name,DurationYear,EligibilityCriteria,Status,CreatedAt,LastModifiedAt")] Course course)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Detail,Name,DurationYear,EligibilityCriteria,Status,CreatedAt,0,LastModifiedAt,0")] Course course)
         {
             if (id != course.Id)
             {
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
-            {
+            
                 try
                 {
                     _context.Update(course);
@@ -112,7 +111,7 @@ namespace Admin.Controllers
                     }
                 }
                 return RedirectToAction(nameof(Index));
-            }
+            
             return View(course);
         }
 
