@@ -6,6 +6,7 @@ using Admin.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.AspNetCore.Http;
 
 namespace Admin.Controllers;
 
@@ -14,7 +15,7 @@ public class UserController : Controller
     private readonly DatabaseContext _context;
     private readonly SignInManager<ApplicationUser> signInManager;
     private readonly IConfiguration configuration;
-
+    
     public UserController(DatabaseContext context, SignInManager<ApplicationUser> signInManager,
         IConfiguration configuration)
     {
@@ -24,9 +25,24 @@ public class UserController : Controller
     }
     
     [HttpGet]
+    public async Task<IActionResult> DeleteCookie()
+    {
+        HttpContext.Response.Cookies.Delete("token");
+        HttpContext.Response.Cookies.Delete("expireTime");
+        await signInManager.SignOutAsync();
+        return RedirectToAction("Login", "User");
+    }
+    
+    [HttpGet]
     public IActionResult Login()
     {
         HttpContext.Request.Cookies.TryGetValue("token", out var token);
+        HttpContext.Request.Cookies.TryGetValue("expireTime", out var expireTime);
+        DateTime.TryParse(expireTime, out var expired);
+        if (expired > DateTime.Now)
+        {
+            return RedirectToAction("Index", "Home");
+        }
         if (!token.IsNullOrEmpty())
         {
             return RedirectToAction("Index", "Home");
@@ -43,8 +59,15 @@ public class UserController : Controller
         {
             return Unauthorized();
         }
-
-        HttpContext.Response.Cookies.Append("token", result);
+        
+        var cookieOptions = new CookieOptions
+        {
+            Expires = DateTime.Now.AddHours(1)
+        };
+        
+        HttpContext.Response.Cookies.Append("token", result, cookieOptions);
+        HttpContext.Response.Cookies.Append("expireTime", DateTime.Now.AddHours(1).ToString(), cookieOptions);
+        
         return RedirectToAction("Index", "Home");
     }
 
