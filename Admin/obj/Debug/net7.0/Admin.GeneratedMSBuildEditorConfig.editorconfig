@@ -16,20 +16,12 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = D:\ASP.net\AdminCollage\Admin
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/ASP.net/AdminCollage/Admin/Views/Admissions/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaXNzaW9uc1xDcmVhdGUuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
 [D:/ASP.net/AdminCollage/Admin/Views/Admissions/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaXNzaW9uc1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/ASP.net/AdminCollage/Admin/Views/Admissions/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaXNzaW9uc1xEZXRhaWxzLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/ASP.net/AdminCollage/Admin/Views/Admissions/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaXNzaW9uc1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/ASP.net/AdminCollage/Admin/Views/Admissions/Index.cshtml]

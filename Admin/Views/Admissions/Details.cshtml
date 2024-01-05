@@ -10,227 +10,237 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
 </head>
 <body>
-<h1>Details</h1>
+    <div class="col-md-10">
+        <div class="card card-primary">
+            <div class="card-header">
+                <h2 class="card-title">Detail </h2><br>
+            </div>
+            <div class="card-body">
+                <div>
+                    <h4>Admission</h4>
+                    <hr />
+                    <dl class="row">
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.Name)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.Name)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.Email)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.Email)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.FatherName)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.FatherName)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.MotherName)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.MotherName)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.Dob)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.Dob)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.Gender)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.Gender)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.ResAddress)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.ResAddress)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.PerAddress)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.PerAddress)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.AdmissionFor)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.AdmissionFor)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.University)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.University)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.EnrollmentNumber)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.EnrollmentNumber)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.Center)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.Center)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.Stream)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.Stream)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.Field)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.Field)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.MarkSecured)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.MarkSecured)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.OutOf)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.OutOf)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.ClassObtained)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.ClassObtained)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.SportDetail)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.SportDetail)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.Status)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.Status)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.CreatedAt)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.CreatedAt)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.LastModifiedAt)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.LastModifiedAt)
+                        </dd>
+                    </dl>
+                </div>
+                <div>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Approve</button>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#rejectModal">Reject</button>
 
-<div>
-    <h4>Admission</h4>
-    <hr/>
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Name)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Email)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Email)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.FatherName)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.FatherName)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.MotherName)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.MotherName)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Dob)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Dob)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Gender)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Gender)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ResAddress)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ResAddress)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.PerAddress)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.PerAddress)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.AdmissionFor)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.AdmissionFor)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.University)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.University)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.EnrollmentNumber)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.EnrollmentNumber)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Center)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Center)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Stream)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Stream)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Field)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Field)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.MarkSecured)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.MarkSecured)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.OutOf)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.OutOf)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ClassObtained)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ClassObtained)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.SportDetail)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.SportDetail)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Status)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Status)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.CreatedAt)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.CreatedAt)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.LastModifiedAt)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.LastModifiedAt)
-        </dd>
-    </dl>
-</div>
-<div>
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Approve</button>
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#rejectModal">Reject</button>
+                    <a asp-action="Index">Back to List</a>
+                </div>
 
-    <a asp-action="Index">Back to List</a>
-</div>
+                <!-- Approval Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Approve Admission</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                Are you sure you want to approve this admission?
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                                <button id="approval" type="button" class="btn btn-primary">Yes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-<!-- Approval Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Approve Admission</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                Are you sure you want to approve this admission?
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
-                <button id="approval" type="button" class="btn btn-primary">Yes</button>
-            </div>
-        </div>
-    </div>
-</div>
+                <!-- Rejection Modal -->
+                <div class="modal fade" id="rejectModal" tabindex="-1" role="dialog" aria-labelledby="rejectModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="rejectModalLabel">Reject Admission</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                Are you sure you want to reject this admission?
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                                <button id="rejection" type="button" class="btn btn-primary">Yes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-<!-- Rejection Modal -->
-<div class="modal fade" id="rejectModal" tabindex="-1" role="dialog" aria-labelledby="rejectModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="rejectModalLabel">Reject Admission</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                Are you sure you want to reject this admission?
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
-                <button id="rejection" type="button" class="btn btn-primary">Yes</button>
-            </div>
-        </div>
-    </div>
-</div>
+                @section Scripts {
+                    <script type="text/javascript">
+                        var id = @Model.Id;
+                        console.log(id)
+                        $(document).ready(function () {
+                            $("#approval").click(function () {
+                                console.log($("#approval"))
+                                $.ajax({
+                                    type: 'PUT',
+                                    url: `http://localhost:5080/api/Admission/${id}/Approved`,
+                                    contentType: 'application/json; charset=utf-8',
+                                    dataType: 'json',
+                                    headers: {
+                                        Authorization: `Bearer @token`
+                                    },
+                                    success: function (data) {
+                                        window.location.href = "/Admissions/Index";
+                                    }
+                                });
+                                console.log("approval")
+                            });
 
-@section Scripts {
-<script type="text/javascript">
-    var id = @Model.Id;
-    console.log(id)
-    $(document).ready(function () {
-        $("#approval").click(function () {
-            console.log($("#approval"))
-            $.ajax({
-                type: 'PUT',
-                url: `http://localhost:5080/api/Admission/${id}/Approved`,
-                contentType: 'application/json; charset=utf-8',
-                dataType: 'json',
-                headers: {
-                    Authorization: `Bearer @token` 
-                },
-                success: function (data) {
-                    window.location.href = "/Admissions/Index";
+                            $("#rejection").click(function () {
+                                $.ajax({
+                                    type: "PUT",
+                                    url: `http://localhost:5080/api/Admission/${id}/Rejected`,
+                                    contentType: 'application/json; charset=utf-8',
+                                    dataType: 'json',
+                                    headers: {
+                                        Authorization: `Bearer @token`
+                                    },
+                                    success: function (data) {
+                                        window.location.href = "/Admissions/Index";
+                                    }
+                                });
+                            });
+                        });
+                    </script>
                 }
-            });
-            console.log("approval")
-        });
-
-        $("#rejection").click(function () {
-            $.ajax({
-                type: "PUT",
-                url: `http://localhost:5080/api/Admission/${id}/Rejected`,
-                contentType: 'application/json; charset=utf-8',
-                dataType: 'json',
-                headers: {
-                    Authorization: `Bearer @token` 
-                },
-                success: function (data) {
-                    window.location.href = "/Admissions/Index";
-                }
-            });
-        });
-    });
-</script>
-}
 
 </body>
+            </div>
+            <!-- /.card-body -->
+        </div>
+        <!-- /.card -->
+    </div>
+
