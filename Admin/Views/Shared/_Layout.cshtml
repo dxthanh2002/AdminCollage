@@ -1,4 +1,11 @@
-﻿<!DOCTYPE html>
+﻿@inject IHttpContextAccessor HttpContextAccessor
+
+@{
+    var token = HttpContextAccessor.HttpContext.Request.Cookies["token"];
+    var expireTime = HttpContextAccessor.HttpContext.Request.Cookies["expireTime"] ?? "";
+}
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -346,6 +353,13 @@
                 "responsive": true,
             });
         });
+    </script>
+    <script type="text/javascript">
+        var token = '@token';
+        var expireTime = '@expireTime';
+        if (!token || !expireTime || Date.parse(expireTime) < Date.now()) {
+            window.location.href = "/User/DeleteCookie";
+        }
     </script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)

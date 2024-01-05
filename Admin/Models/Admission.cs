@@ -11,6 +11,8 @@ namespace Admin.Models
         [Key] public int Id { get; set; }
         [DisplayName("Student name")]
         public string Name { get; set; }
+        [DisplayName("Email")]
+        public string Email { get; set; }
         [DisplayName("Father")]
         public string FatherName { get; set; }
         [DisplayName("Mother")]

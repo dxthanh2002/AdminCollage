@@ -1,19 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Admin.Data;
 using Admin.Models;
+using Admin.Models.Enums;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Admin.Controllers
 {
+    [Authorize(Roles = "Administrator")]
     public class ImagesController : Controller
     {
         private readonly DatabaseContext _context;
-
+        
         public ImagesController(DatabaseContext context)
         {
             _context = context;
@@ -56,7 +55,7 @@ namespace Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,FileName,FileType,FilePath,Section,Page,Status,CreatedAt,CreatedById,LastModifiedAt,LastModifiedBy,CreatedDate,LastModifiedDate")] Image image)
+        public async Task<IActionResult> Create([Bind("Id,FileName,FileType,FilePath,Section,Page,Status,CreatedAt,CreatedById,LastModifiedAt,LastModifiedBy")] Image image)
         {
             if (ModelState.IsValid)
             {
@@ -64,6 +63,11 @@ namespace Admin.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            ViewBag.Status = Enum.GetValues(typeof(Status)).Cast<Status>().Select(x => new SelectListItem
+            {
+                Value = ((int) x).ToString(),
+                Text = x.ToString()
+            });
             return View(image);
         }
 
@@ -88,7 +92,7 @@ namespace Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,FileName,FileType,FilePath,Section,Page,Status,CreatedAt,CreatedById,LastModifiedAt,LastModifiedBy,CreatedDate,LastModifiedDate")] Image image)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,FileName,FileType,FilePath,Section,Page,Status,CreatedAt,CreatedById,LastModifiedAt,LastModifiedBy")] Image image)
         {
             if (id != image.Id)
             {
