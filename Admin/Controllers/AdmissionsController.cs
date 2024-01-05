@@ -57,7 +57,7 @@ namespace Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,FatherName,MotherName,Dob,Gender,ResAddress,PerAddress,AdmissionFor,University,EnrollmentNumber,Center,Stream,Field,MarkSecured,OutOf,ClassObtained,SportDetail,Status,CreatedAt,CreatedById,LastModifiedAt,LastModifiedBy")] Admission admission)
+        public async Task<IActionResult> Create([Bind("Id,Name,FatherName,MotherName,Dob,Gender,ResAddress,PerAddress,AdmissionFor,University,EnrollmentNumber,Center,Stream,Field,MarkSecured,OutOf,ClassObtained,SportDetail,Status,CreatedAt,LastModifiedAt")] Admission admission)
         {
             if (ModelState.IsValid)
             {
@@ -102,7 +102,7 @@ namespace Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,FatherName,MotherName,Dob,Gender,ResAddress,PerAddress,AdmissionFor,University,EnrollmentNumber,Center,Stream,Field,MarkSecured,OutOf,ClassObtained,SportDetail,Status,CreatedAt,CreatedById,LastModifiedAt,LastModifiedBy")] Admission admission)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,FatherName,MotherName,Dob,Gender,ResAddress,PerAddress,AdmissionFor,University,EnrollmentNumber,Center,Stream,Field,MarkSecured,OutOf,ClassObtained,SportDetail,Status,CreatedAt,LastModifiedAt")] Admission admission)
         {
             if (id != admission.Id)
             {

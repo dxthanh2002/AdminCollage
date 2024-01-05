@@ -56,7 +56,7 @@ namespace Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,HeadOfDepartment,ContactInformation,Description,Status,CreatedAt,CreatedById,LastModifiedAt,LastModifiedBy")] Department department)
+        public async Task<IActionResult> Create([Bind("Id,Name,HeadOfDepartment,ContactInformation,Description,Status,CreatedAt,LastModifiedAt")] Department department)
         {
             if (ModelState.IsValid)
             {
@@ -88,7 +88,7 @@ namespace Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,HeadOfDepartment,ContactInformation,Description,Status,CreatedAt,CreatedById,LastModifiedAt,LastModifiedBy")] Department department)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,HeadOfDepartment,ContactInformation,Description,Status,CreatedAt,LastModifiedAt")] Department department)
         {
             if (id != department.Id)
             {

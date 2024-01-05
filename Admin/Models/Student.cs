@@ -24,7 +24,7 @@ namespace Admin.Models
         public string? PermanentAddress { get; set; }
         [DisplayName("Admission Year")]
 
-        [Range(1970, 2024, ErrorMessage = "Please enter valid integer Number")] public int AdmissionYear { get; set; }
+        [Range(1970, 2024, ErrorMessage = "Please enter valid Number (1970-2024)")] public int AdmissionYear { get; set; }
         [DisplayName("Admission Stream")]
         public string? AdmissionStream { get; set; }
         [DisplayName("Student Code")]
@@ -35,11 +35,10 @@ namespace Admin.Models
         public Status Status { get; set; }
         [DisplayName("Create Time")]
         public DateTime CreatedAt { get; set; }
-        [DisplayName("Create Id")]
-        public int CreatedById { get; set; }
-        [DisplayName("Last Modified")]
+        [DisplayName("Last modified")]
+
         public DateTime LastModifiedAt { get; set; }
-        [DisplayName("Last Modified by")]
-        public int LastModifiedBy { get; set; }
+  
+
     }
 }

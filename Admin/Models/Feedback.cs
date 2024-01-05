@@ -1,4 +1,5 @@
 ﻿using Admin.Models.Enums;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -16,8 +17,8 @@ namespace Admin.Models
         [Column(TypeName = "ntext")] public string? OtherQuestion { get; set; }
         public Status Status { get; set; }
         public DateTime CreatedAt { get; set; }
-        public int CreatedById { get; set; }
+        [DisplayName("Last modified")]
         public DateTime LastModifiedAt { get; set; }
-        public int LastModifiedBy { get; set; }
+
     }
 }
