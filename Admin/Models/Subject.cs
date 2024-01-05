@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Admin.Models
 {
-    public class Subject : BaseObject
+    public class Subject
     {
         [Key] public int Id { get; set; }
         [DisplayName("Subject Name")]
