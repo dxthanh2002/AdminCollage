@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Admin.Models
 {
-    public class Image : BaseObject
+    public class Image
 
     {
         [Key] public int Id { get; set; }
