@@ -11,6 +11,8 @@ namespace Admin.Models
         [Key] public int Id { get; set; }
         [DisplayName("Student name")]
         public string Name { get; set; }
+        [DisplayName("Email")]
+        public string Email { get; set; }
         [DisplayName("Father")]
         public string FatherName { get; set; }
         [DisplayName("Mother")]
@@ -48,11 +50,9 @@ namespace Admin.Models
         public Status Status { get; set; }
         [DisplayName("Create Time")]
         public DateTime CreatedAt { get; set; }
-        [DisplayName("Create by")]
-        public int CreatedById { get; set; }
-        [DisplayName("Last modify time")]
+        [DisplayName("Last modified")]
         public DateTime LastModifiedAt { get; set; }
-        [DisplayName("Last User modify")]
-        public int LastModifiedBy { get; set; }
+
+
     }
 }

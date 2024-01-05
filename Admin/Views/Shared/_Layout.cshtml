@@ -1,4 +1,11 @@
-﻿<!DOCTYPE html>
+﻿@inject IHttpContextAccessor HttpContextAccessor
+
+@{
+    var token = HttpContextAccessor.HttpContext.Request.Cookies["token"];
+    var expireTime = HttpContextAccessor.HttpContext.Request.Cookies["expireTime"] ?? "";
+}
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -172,7 +179,7 @@
                         </li>
                         <li class="nav-item">
                             <a asp-area="" asp-controller="ContactUs" asp-action="" class="nav-link">
-                                <i class="nav-icon fas fa-th"></i>
+                                <i class="far fa-address-card"></i>
                                 <p>
                                     ContactUs
                                 </p>
@@ -180,7 +187,7 @@
                         </li>
                         <li class="nav-item">
                             <a asp-area="" asp-controller="Courses" asp-action="" class="nav-link">
-                                <i class="nav-icon fas fa-th"></i>
+                                <i class="nav-icon fas fa-book"></i>
                                 <p>
                                     Courses
                                 </p>
@@ -196,7 +203,7 @@
                         </li>
                         <li class="nav-item">
                             <a asp-area="" asp-controller="Facilities" asp-action="" class="nav-link">
-                                <i class="nav-icon fas fa-th"></i>
+                                <i class="fas fa-dumbbell"></i>
                                 <p>
                                     Facilities
                                 </p>
@@ -204,7 +211,7 @@
                         </li>
                         <li class="nav-item">
                             <a asp-area="" asp-controller="Faculties" asp-action="" class="nav-link">
-                                <i class="nav-icon fas fa-th"></i>
+                                <i class="fas fa-window-restore"></i>
                                 <p>
                                     Faculties
                                 </p>
@@ -212,7 +219,7 @@
                         </li>
                         <li class="nav-item">
                             <a asp-area="" asp-controller="Feedbacks" asp-action="" class="nav-link">
-                                <i class="nav-icon fas fa-th"></i>
+                                <i class="nav-icon fas fa-pen"></i>
                                 <p>
                                     Feedback
                                 </p>
@@ -220,7 +227,7 @@
                         </li>
                         <li class="nav-item">
                             <a asp-area="" asp-controller="Students" asp-action="" class="nav-link">
-                                <i class="nav-icon fas fa-th"></i>
+                                <i class="fas fa-user-edit"></i>
                                 <p>
                                     Student
                                 </p>
@@ -241,7 +248,7 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0">Dashboard</h1>
+                            <h1 class="m-0"></h1>
                         </div><!-- /.col -->
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
@@ -346,6 +353,13 @@
                 "responsive": true,
             });
         });
+    </script>
+    <script type="text/javascript">
+        var token = '@token';
+        var expireTime = '@expireTime';
+        if (!token || !expireTime || Date.parse(expireTime) < Date.now()) {
+            window.location.href = "/User/DeleteCookie";
+        }
     </script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
