@@ -381,12 +381,9 @@
     <script src="~/plugins/codemirror/mode/htmlmixed/htmlmixed.js"></script>
     <!-- Page specific script -->
     <script src="~/ckeditor5/ckeditor.js"></script>
-    <script>
-        ClassicEditor
-            .create(document.querySelector('#editorr'))
-            .catch(error => {
-                console.error(error);
-            });
+    <script src="~/js/site.js">
+
+        
     </script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
