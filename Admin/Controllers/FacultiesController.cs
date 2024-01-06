@@ -48,6 +48,7 @@ namespace Admin.Controllers
         // GET: Faculties/Create
         public IActionResult Create()
         {
+            ViewBag.Age = new SelectList(_context.Departments, "Id", "Name");
             return View();
         }
 
@@ -56,7 +57,7 @@ namespace Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,Defination,Qualification,ContactInformation,Description,Status,CreatedAt,LastModifiedAt")] Faculty faculty)
+        public async Task<IActionResult> Create([Bind("Id,Name,Department,Defination,Qualification,ContactInformation,Description,Status,CreatedAt,0,LastModifiedAt,0")] Faculty faculty)
         {
             if (ModelState.IsValid)
             {
