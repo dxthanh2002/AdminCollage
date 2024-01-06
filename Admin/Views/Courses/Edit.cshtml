@@ -33,11 +33,6 @@
                         <span asp-validation-for="Title" class="text-danger"></span>
                     </div>
                     <div class="form-group">
-                        <label asp-for="Detail" class="control-label"></label>
-                        <input asp-for="Detail" class="form-control" />
-                        <span asp-validation-for="Detail" class="text-danger"></span>
-                    </div>
-                    <div class="form-group">
                         <label asp-for="Name" class="control-label"></label>
                         <input asp-for="Name" class="form-control" />
                         <span asp-validation-for="Name" class="text-danger"></span>
@@ -80,6 +75,28 @@
                     </div>
 
                 </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card card-outline card-info">
+                        <div class="card-header">
+                            <h3 class="card-title">
+                                Detail
+                            </h3>
+                        </div>
+                        <!-- /.card-header -->
+                        <div class="card-body">
+                            <textarea asp-for="Detail" id="editorr" class="col-md-12">
+                                    Text a note in <strong>there!</strong>
+                            </textarea>
+                            <span asp-validation-for="Detail" class="text-danger"></span>
+                        </div>
+                        <div class="card-footer">
+                            Write about description.
+                        </div>
+                    </div>
+                </div>
+                <!-- /.col-->
             </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
