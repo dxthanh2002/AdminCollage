@@ -1,4 +1,4 @@
-﻿@{
+@{
     ViewData["Title"] = "Upload Image";
 }
 
@@ -12,27 +12,27 @@
 <div class="input-section">
     <div class="form-group">
         <p class="input-title">Page</p>
-        <select type="text" class="form-control" id="page">
+        <select type="text" class="form-control" id="page" disabled="disabled">
             <option>--</option>
             <option value="department">Department</option>
             <option value="faculty">Faculty</option>
             <option value="course">Course</option>
-            <option value="home">Home</option>
+            <option value="home" selected="selected">Home</option>
         </select>
     </div>
     <div class="form-group">
         <p class="input-title">Section</p>
-        <select type="text" class="form-control" id="section">
+        <select type="text" class="form-control" id="section" disabled="disabled">
             <option>--</option>
-            <option value="banner">Banner</option>
+            <option value="banner" selected="selected">Banner</option>
             <option value="thumbnail">Thumbnail</option>
             <option value="icon">Icon</option>
         </select>
     </div>
-    <div class="form-group">
-        <p class="input-title">Parent Id</p>
-        <input type="text" class="form-control" id="parentId" placeholder="Parent Id"/>
-    </div>
+    @* <div class="form-group"> *@
+    @*     <p class="input-title">Parent Id</p> *@
+    @*     <input type="text" class="form-control" id="parentId" placeholder="Parent Id"/> *@
+    @* </div> *@
 </div>
 <div class="login-buttons">
     <input id="upload" type="submit" name="submit" class="login-button" value="Upload"/>
@@ -75,20 +75,16 @@
     var file = document.getElementById("file");
     var page = document.getElementById("page");
     var section = document.getElementById("section");
-    var parentId = document.getElementById("parentId");
+    // var parentId = document.getElementById("parentId");
     
     $("#file").change(function() {
         formData.append("File", file.files[0]);
     });
-    $("#page").change(function() {
-        formData.append("Page", page.value);
-    });
-    $("#section").change(function() {
-        formData.append("Section", section.value);
-    });
-    $("#parentId").change(function() {
-        formData.append("ParentId", parentId.value);
-    });
+    formData.append("Page", "home");
+    formData.append("Section", "banner");
+    // $("#parentId").change(function() {
+    //     formData.append("ParentId", parentId.value);
+    // });
     
     $(document).ready(function () {
         $("#upload").click(function() {
@@ -99,8 +95,13 @@
                 contentType: false,
                 processData: false,
                 success: function (data) {
+                    alert("Image uploaded successfully!");
                     window.location.href = "/Images/Index";
+                },
+                fail: function (data) {
+                    alert("Image upload failed!");
                 }
+                
             });
         });
     });

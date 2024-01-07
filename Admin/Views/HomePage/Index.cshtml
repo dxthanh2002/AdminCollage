@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Admin.Models.Image>
+@model IEnumerable<Admin.Models.Image>
 
 @{
     ViewData["Title"] = "Index";
@@ -14,13 +14,10 @@
 
 <body>
 <div class="card">
-    <div class="card-header">
-        <h3 class="card-title">DataTable for Images</h3>
-    </div>
     <div class="card-body">
         <table id="example1" class="table table-bordered table-striped">
             <p>
-                <a class="btn btn-success" asp-action="Create">Upload Image</a>
+                <a class="btn btn-success" asp-action="Create">Upload Image For Homepage Banner</a>
             </p>
             <thead>
             <tr>
@@ -95,9 +92,7 @@
                     <td>
                         @Html.DisplayFor(modelItem => item.LastModifiedAt)
                     </td>
-
                     <td>
-                        <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
                         <span class="hyperlink" id="delete" data-value="@item.Id">Delete</span>
                     </td>
                 </tr>
