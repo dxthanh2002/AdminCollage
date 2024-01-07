@@ -259,7 +259,7 @@ namespace Admin.Migrations
                     b.ToTable("Courses");
                 });
 
-            modelBuilder.Entity("Admin.Models.Department", b =>
+            modelBuilder.Entity("Admin.Models.DepartmentId", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -947,13 +947,13 @@ namespace Admin.Migrations
 
             modelBuilder.Entity("Admin.Models.Faculty", b =>
                 {
-                    b.HasOne("Admin.Models.Department", "Department")
+                    b.HasOne("Admin.Models.DepartmentId", "DepartmentId")
                         .WithMany()
                         .HasForeignKey("DepartmentId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Department");
+                    b.Navigation("DepartmentId");
                 });
 
             modelBuilder.Entity("Admin.Models.SectionData", b =>

@@ -9,7 +9,7 @@ namespace Admin.Models
     {
         [Key] public int Id { get; set; }
         public string Name { get; set; }
-        public  Department Department { get; set; }
+        public  Department? Department { get; set; }
         [DisplayName("Defiantion")]
         public string Defination { get; set; }
         public string Qualification { get; set; }

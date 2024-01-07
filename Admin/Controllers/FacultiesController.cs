@@ -48,7 +48,7 @@ namespace Admin.Controllers
         // GET: Faculties/Create
         public IActionResult Create()
         {
-            ViewBag.Age = new SelectList(_context.Departments, "Id", "Name");
+            ViewData["departmentid"] = new SelectList(_context.Departments, "Id", "Name");
             return View();
         }
 
