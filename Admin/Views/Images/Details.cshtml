@@ -1,1 +1,46 @@
-﻿
+﻿@model Admin.Models.Image
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<link rel="stylesheet" href="~/css/image-edit.css" />
+
+<h1>Details</h1>
+
+<body>
+<div class="file-wrapper">
+    <div id="file" name="upload-img" disabled="disabled">
+    </div>
+</div>
+
+<div class="input-section">
+    <div class="form-group">
+        <span class="input-title">Page:</span>
+        <span>@Html.DisplayFor(model => model.Page)</span>
+    </div>
+    <div class="form-group">
+        <span class="input-title">Section:</span>
+        <span>@Html.DisplayFor(model => model.Section)</span>
+    </div>
+    <div class="form-group">
+        <span class="input-title">Parent Id:</span>
+        <span>@Html.DisplayFor(model => model.ParentId)</span>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+</body>
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+    <script type="text/javascript">
+        var imgUrl = `http://localhost:5080/api/image/@Html.DisplayFor(model => model.FileName)`;
+        
+        var item = $('.file-wrapper');
+        item.css("background-image", `url(\"${imgUrl}\")`);
+        item.css("background-size", "cover");
+    </script>
+}
