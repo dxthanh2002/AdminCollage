@@ -56,9 +56,28 @@ namespace Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Title,Detail,Name,DurationYear,EligibilityCriteria,Status,CreatedAt,0,LastModifiedAt,0")] Course course)
-        {           
-                    _context.Add(course);
+        public async Task<IActionResult> Create([Bind("Id,Title,Detail,Name,DurationYear,EligibilityCriteria,Thumbnail,Status,CreatedAt,0,LastModifiedAt,0")] Course course, IFormFile image)
+        {
+            foreach (var key in ModelState.Keys)
+            {
+                if (ModelState[key].Errors.Any())
+                {
+                    var errorMessage = ModelState[key].Errors.First().ErrorMessage;
+                    // In ra tên trường và thông báo lỗi
+                    Console.WriteLine($"Field: {key}, Error: {errorMessage}");
+                }
+            }
+            if (image != null && image.Length > 0)
+            {
+                using (var memoryStream = new MemoryStream())
+                {
+                    image.CopyTo(memoryStream);
+                    var imgBytes = memoryStream.ToArray();
+                    var base64String = Convert.ToBase64String(imgBytes);
+                    course.Thumbnail = base64String;
+                }
+            }
+            _context.Add(course);
                     await _context.SaveChangesAsync();
                     return RedirectToAction(nameof(Index));
                     return View(course);   
@@ -92,8 +111,6 @@ namespace Admin.Controllers
             {
                 return NotFound();
             }
-
-            
                 try
                 {
                     _context.Update(course);

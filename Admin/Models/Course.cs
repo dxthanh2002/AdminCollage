@@ -17,6 +17,8 @@ namespace Admin.Models
         public string EligibilityCriteria { get; set; }
         public virtual List<Student>? Students { get; set; }
         public List<Subject> Subjects { get; set; }
+        [DisplayName("Thumbnail")]
+        public string? Thumbnail { get; set; } 
         public Status Status { get; set; }
         [DisplayName("Create Time")]
         public DateTime CreatedAt { get; set; }
