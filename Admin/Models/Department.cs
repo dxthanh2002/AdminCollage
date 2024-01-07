@@ -21,5 +21,8 @@ namespace Admin.Models
         public int CreatedById { get; set; }
         public DateTime LastModifiedAt { get; set; }
         public int LastModifiedBy { get; set; }
+        public ICollection<Faculty> Faculties { get; set; }
+
+        
     }
 }
