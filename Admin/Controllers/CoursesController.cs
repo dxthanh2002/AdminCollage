@@ -56,7 +56,7 @@ namespace Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Title,Detail,Name,DurationYear,EligibilityCriteria,Thumbnail,Status,CreatedAt,0,LastModifiedAt,0")] Course course, IFormFile image)
+        public async Task<IActionResult> Create([Bind("Id,Title,Detail,Name,DurationYear,EligibilityCriteria,Thumbnail,Status,CreatedAt,0,LastModifiedAt,0")] Course course, IFormFile Thumbnail)
         {
             foreach (var key in ModelState.Keys)
             {
@@ -67,11 +67,11 @@ namespace Admin.Controllers
                     Console.WriteLine($"Field: {key}, Error: {errorMessage}");
                 }
             }
-            if (image != null && image.Length > 0)
+            if (Thumbnail != null && Thumbnail.Length > 0)
             {
                 using (var memoryStream = new MemoryStream())
                 {
-                    image.CopyTo(memoryStream);
+                    Thumbnail.CopyTo(memoryStream);
                     var imgBytes = memoryStream.ToArray();
                     var base64String = Convert.ToBase64String(imgBytes);
                     course.Thumbnail = base64String;
@@ -105,14 +105,25 @@ namespace Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Detail,Name,DurationYear,EligibilityCriteria,Status,CreatedAt,0,LastModifiedAt,0")] Course course)
-        {
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Detail,Name,DurationYear,EligibilityCriteria,Thumbnail,Status,CreatedAt,0,LastModifiedAt,0")] Course course, IFormFile Thumbnail)
+          {
+            if (Thumbnail != null && Thumbnail.Length > 0)
+            {
+                using (var memoryStream = new MemoryStream())
+                {
+                    Thumbnail.CopyTo(memoryStream);
+                    var imgBytes = memoryStream.ToArray();
+                    var base64String = Convert.ToBase64String(imgBytes);
+                    course.Thumbnail = base64String;
+                }
+            }
             if (id != course.Id)
             {
                 return NotFound();
             }
                 try
                 {
+
                     _context.Update(course);
                     await _context.SaveChangesAsync();
                 }
