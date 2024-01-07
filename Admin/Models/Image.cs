@@ -12,6 +12,7 @@ namespace Admin.Models
         public string FilePath { get; set; }
         public string Section { get; set; }
         public string Page { get; set; }
+        public int? ParentId { get; set; }
         public Status Status { get; set; }
         public DateTime CreatedAt { get; set; }
         public int CreatedById { get; set; }

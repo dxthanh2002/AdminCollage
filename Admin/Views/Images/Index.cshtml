@@ -4,15 +4,11 @@
     ViewData["Title"] = "Index";
 }
 
-<div class="card">
-    <div class="card-header">
-        <h3 class="card-title">DataTable for Images</h3>
-    </div>
-    <div class="card-body">
-        <table id="example1" class="table table-bordered table-striped">
-            <p>
-                <a class="btn btn-success" asp-action="Create">Create New</a>
-            </p>
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
 <table class="table">
     <thead>
         <tr>
@@ -30,6 +26,9 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Page)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ParentId)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Status)
@@ -68,6 +67,9 @@
                 @Html.DisplayFor(modelItem => item.Page)
             </td>
             <td>
+                @Html.DisplayFor(modelItem => item.ParentId)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.Status)
             </td>
             <td>
@@ -82,7 +84,6 @@
             <td>
                 @Html.DisplayFor(modelItem => item.LastModifiedBy)
             </td>
-
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
@@ -92,5 +93,3 @@
 }
     </tbody>
 </table>
-</div>
-</div>
