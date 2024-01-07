@@ -1,88 +1,108 @@
-﻿@model Admin.Models.Image
-
-@{
-    ViewData["Title"] = "Create";
+﻿@{
+    ViewData["Title"] = "Upload Image";
 }
 
-<h1>Create</h1>
+<link rel="stylesheet" href="~/css/site.css" />
 
-<h4>Image</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="FileName" class="control-label"></label>
-                <input asp-for="FileName" class="form-control" />
-                <span asp-validation-for="FileName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="FileType" class="control-label"></label>
-                <input asp-for="FileType" class="form-control" />
-                <span asp-validation-for="FileType" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="FilePath" class="control-label"></label>
-                <input asp-for="FilePath" class="form-control" />
-                <span asp-validation-for="FilePath" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Section" class="control-label"></label>
-                <input asp-for="Section" class="form-control" />
-                <span asp-validation-for="Section" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Page" class="control-label"></label>
-                <input asp-for="Page" class="form-control" />
-                <span asp-validation-for="Page" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Status" class="control-label"></label>
-                <select asp-for="Status" class="form-control"></select>
-                <span asp-validation-for="Status" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="CreatedAt" class="control-label"></label>
-                <input asp-for="CreatedAt" class="form-control" />
-                <span asp-validation-for="CreatedAt" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="CreatedById" class="control-label"></label>
-                <input asp-for="CreatedById" class="form-control" />
-                <span asp-validation-for="CreatedById" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="LastModifiedAt" class="control-label"></label>
-                <input asp-for="LastModifiedAt" class="form-control" />
-                <span asp-validation-for="LastModifiedAt" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="LastModifiedBy" class="control-label"></label>
-                <input asp-for="LastModifiedBy" class="form-control" />
-                <span asp-validation-for="LastModifiedBy" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="CreatedDate" class="control-label"></label>
-                <input asp-for="CreatedDate" class="form-control" />
-                <span asp-validation-for="CreatedDate" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="LastModifiedDate" class="control-label"></label>
-                <input asp-for="LastModifiedDate" class="form-control" />
-                <span asp-validation-for="LastModifiedDate" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
+<body>
+<div class="file-wrapper">
+    <input accept="image/*" id="file" name="upload-img" type="file"/>
+    <div class="close-btn">×</div>
+</div>
+<div class="input-section">
+    <div class="form-group">
+        <p class="input-title">Page</p>
+        <select type="text" class="form-control" id="page">
+            <option>--</option>
+            <option value="department">Department</option>
+            <option value="faculty">Faculty</option>
+            <option value="course">Course</option>
+            <option value="home">Home</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <p class="input-title">Section</p>
+        <select type="text" class="form-control" id="section">
+            <option>--</option>
+            <option value="banner">Home</option>
+            <option value="thumbnail">Thumbnail</option>
+            <option value="icon">Icon</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <p class="input-title">Parent Id</p>
+        <input type="text" class="form-control" id="parentId" placeholder="Parent Id"/>
     </div>
 </div>
-
+<div class="login-buttons">
+    <input id="upload" type="submit" name="submit" class="login-button" value="Upload"/>
+</div>
 <div>
     <a asp-action="Index">Back to List</a>
 </div>
+</body>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+    <script type="text/javascript">
+    var baseUrl = "http://localhost:5080/api/image";
+    var formData = new FormData();
+    
+    $('input[name="upload-img"]').on('change', function(){
+      readURL(this, $('.file-wrapper'));  //Change the image
+    });
+    
+    $('.close-btn').on('click', function(){ //Unset the image
+       let file = $('input[name="upload-img"]');
+       let fileWrapper = $('.file-wrapper');
+       fileWrapper?.css('background-image', 'unset');
+       fileWrapper?.removeClass('file-set');
+       file.replaceWith( file = file.clone( true ) );
+    });
+    
+    //FILE
+    function readURL(input, obj) {
+      if (input.files && input.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function(e) {
+          obj.css('background-image', 'url('+e.target.result+')');
+          obj.addClass('file-set');
+        }
+        reader.readAsDataURL(input.files[0]);
+      }
+    }
+    
+    var file = document.getElementById("file");
+    var page = document.getElementById("page");
+    var section = document.getElementById("section");
+    var parentId = document.getElementById("parentId");
+    
+    $("#file").change(function() {
+        formData.append("File", file.files[0]);
+    });
+    $("#page").change(function() {
+        formData.append("Page", page.value);
+    });
+    $("#section").change(function() {
+        formData.append("Section", section.value);
+    });
+    $("#parentId").change(function() {
+        formData.append("ParentId", parentId.value);
+    });
+    
+    $(document).ready(function () {
+        $("#upload").click(function() {
+            $.ajax({
+                url: baseUrl,
+                type: "POST",
+                data: formData,
+                contentType: false,
+                processData: false,
+                success: function (data) {
+                    window.location.href = "/Images/Index";
+                }
+            });
+        });
+    });
+  </script>
 }
