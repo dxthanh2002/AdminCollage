@@ -16,20 +16,12 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = D:\ASP.net\AdminCollage\Admin
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/ASP.net/AdminCollage/Admin/Views/Admissions/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaXNzaW9uc1xDcmVhdGUuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
 [D:/ASP.net/AdminCollage/Admin/Views/Admissions/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaXNzaW9uc1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/ASP.net/AdminCollage/Admin/Views/Admissions/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaXNzaW9uc1xEZXRhaWxzLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/ASP.net/AdminCollage/Admin/Views/Admissions/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaXNzaW9uc1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/ASP.net/AdminCollage/Admin/Views/Admissions/Index.cshtml]
@@ -162,26 +154,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/ASP.net/AdminCollage/Admin/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/ASP.net/AdminCollage/Admin/Views/Images/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW1hZ2VzXENyZWF0ZS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/ASP.net/AdminCollage/Admin/Views/Images/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW1hZ2VzXERlbGV0ZS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/ASP.net/AdminCollage/Admin/Views/Images/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW1hZ2VzXERldGFpbHMuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/ASP.net/AdminCollage/Admin/Views/Images/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW1hZ2VzXEVkaXQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/ASP.net/AdminCollage/Admin/Views/Images/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW1hZ2VzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/ASP.net/AdminCollage/Admin/Views/Shared/Error.cshtml]

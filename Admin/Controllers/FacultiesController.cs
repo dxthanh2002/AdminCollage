@@ -22,9 +22,9 @@ namespace Admin.Controllers
         // GET: Faculties
         public async Task<IActionResult> Index()
         {
-              return _context.Faculties != null ? 
-                          View(await _context.Faculties.ToListAsync()) :
-                          Problem("Entity set 'DatabaseContext.Faculties'  is null.");
+            var databaseContext = _context.Faculties.Include(f => f.Department);
+            return View(await databaseContext.ToListAsync());
+
         }
 
         // GET: Faculties/Details/5
@@ -36,6 +36,7 @@ namespace Admin.Controllers
             }
 
             var faculty = await _context.Faculties
+                .Include(f => f.Department)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (faculty == null)
             {
@@ -48,6 +49,7 @@ namespace Admin.Controllers
         // GET: Faculties/Create
         public IActionResult Create()
         {
+            ViewData["departmentid"] = new SelectList(_context.Departments, "Id", "Name");
             return View();
         }
 
@@ -56,7 +58,7 @@ namespace Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,Defination,Qualification,ContactInformation,Description,Status,CreatedAt,LastModifiedAt")] Faculty faculty)
+        public async Task<IActionResult> Create([Bind("Id,Name,DepartmentId,Defination,Qualification,ContactInformation,Description,Status,CreatedById,CreatedAt,LastModifiedAt,LastModifiedBy")] Faculty faculty)
         {
             if (ModelState.IsValid)
             {
@@ -64,6 +66,7 @@ namespace Admin.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["DepartmentId"] = new SelectList(_context.Departments, "Id", "Name", faculty.DepartmentId);
             return View(faculty);
         }
 
@@ -80,6 +83,7 @@ namespace Admin.Controllers
             {
                 return NotFound();
             }
+            ViewData["DepartmentId"] = new SelectList(_context.Departments, "Id", "Name", faculty.DepartmentId);
             return View(faculty);
         }
 
@@ -88,7 +92,7 @@ namespace Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Defination,Qualification,ContactInformation,Description,Status,CreatedAt,LastModifiedAt")] Faculty faculty)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,DepartmentId,Defination,Qualification,ContactInformation,Description,Status,CreatedById,CreatedAt,LastModifiedAt,LastModifiedBy")] Faculty faculty)
         {
             if (id != faculty.Id)
             {
@@ -115,6 +119,7 @@ namespace Admin.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["DepartmentId"] = new SelectList(_context.Departments, "Id", "Name", faculty.DepartmentId);
             return View(faculty);
         }
 
@@ -127,6 +132,7 @@ namespace Admin.Controllers
             }
 
             var faculty = await _context.Faculties
+                .Include(f => f.Department)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (faculty == null)
             {
@@ -150,14 +156,14 @@ namespace Admin.Controllers
             {
                 _context.Faculties.Remove(faculty);
             }
-            
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool FacultyExists(int id)
         {
-          return (_context.Faculties?.Any(e => e.Id == id)).GetValueOrDefault();
+            return (_context.Faculties?.Any(e => e.Id == id)).GetValueOrDefault();
         }
     }
 }

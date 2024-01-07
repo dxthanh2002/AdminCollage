@@ -43,25 +43,7 @@
                 @Html.DisplayNameFor(model => model.EnrollmentNumber)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Center)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Stream)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Field)
-            </th>
-            <th>
                 @Html.DisplayNameFor(model => model.MarkSecured)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.OutOf)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ClassObtained)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.SportDetail)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Status)
@@ -110,25 +92,7 @@
                 @Html.DisplayFor(modelItem => item.EnrollmentNumber)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Center)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Stream)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Field)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.MarkSecured)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.OutOf)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ClassObtained)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SportDetail)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Status)
@@ -141,7 +105,7 @@
             </td>
             <td>
                  <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-secondary"><i class="fa fa-eye"></i>Details</a> |
-                 <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger"><i class="fa trash"></i>Delete</a>
+                            <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger"><i class="fas fa-trash-alt"></i>Delete</a>
             </td>
         </tr>
 }

@@ -8,7 +8,7 @@ namespace Admin.Models
     {
         [Key] public int Id { get; set; }
         public string Name { get; set; }
-        [DisplayName("Department")]
+        [DisplayName("Head of Department")]
         public string HeadOfDepartment { get; set; }
         [DisplayName("Contact information")]
         public string ContactInformation { get; set; }
@@ -18,9 +18,11 @@ namespace Admin.Models
         [DisplayName("Create Time")]
         public DateTime CreatedAt { get; set; }
         [DisplayName("Last Modified")]
-  
+        public int CreatedById { get; set; }
         public DateTime LastModifiedAt { get; set; }
+        public int LastModifiedBy { get; set; }
+        public ICollection<Faculty> Faculties { get; set; }
 
-
+        
     }
 }

@@ -128,33 +128,3 @@
         </div>
     </div>
 </div>
-
-@section Scripts {
-    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
-    
-    <script type="text/javascript">
-        var id = $('#delete').data('value');
-        $(document).ready(function () {
-            $('#delete').click(function () {
-               
-                $('#exampleModal').modal('show');
-                $('#yes').click(function () {
-                    $.ajax({
-                        type: 'DELETE',
-                        url: `http://localhost:5080/api/image/${id}`,
-                        success: function (data) {
-                            alert("Image deleted successfully");
-                            location.reload();
-                        },
-                        error: function (data) {
-                            alert("Error deleting image");
-                        }
-                    });
-                });
-            });
-        });
-        
-        
-    </script>
-}
-```
