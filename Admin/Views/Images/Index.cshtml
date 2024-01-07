@@ -10,7 +10,7 @@
         height: 100px;
     }
 </style>
-<link rel="stylesheet" href="~/css/site.css" />
+<link rel="stylesheet" href="~/css/site.css"/>
 
 <body>
 <div class="card">
@@ -81,7 +81,8 @@
                         @if (item.ParentId != null)
                         {
                             @Html.DisplayFor(modelItem => item.ParentId)
-                        } else
+                        }
+                        else
                         {
                             <span>--</span>
                         }
@@ -131,7 +132,7 @@
 
 @section Scripts {
     @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
-    
+
     <script type="text/javascript">
         var id = $('#delete').data('value');
         $(document).ready(function () {
@@ -153,8 +154,5 @@
                 });
             });
         });
-        
-        
     </script>
 }
-```

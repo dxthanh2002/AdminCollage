@@ -9,29 +9,29 @@
 <h1>Details</h1>
 
 <body>
-    <div class="file-wrapper">
-        <div id="file" name="upload-img" disabled="disabled">
-        </div>
+<div class="file-wrapper">
+    <div id="file" name="upload-img" disabled="disabled">
     </div>
+</div>
 
-    <div class="input-section">
-        <div class="form-group">
-            <span class="input-title">Page:</span>
-            <span>@Html.DisplayFor(model => model.Page)</span>
-        </div>
-        <div class="form-group">
-            <span class="input-title">Section:</span>
-            <span>@Html.DisplayFor(model => model.Section)</span>
-        </div>
-        <div class="form-group">
-            <span class="input-title">Parent Id:</span>
-            <span>@Html.DisplayFor(model => model.ParentId)</span>
-        </div>
+<div class="input-section">
+    <div class="form-group">
+        <span class="input-title">Page:</span>
+        <span>@Html.DisplayFor(model => model.Page)</span>
     </div>
+    <div class="form-group">
+        <span class="input-title">Section:</span>
+        <span>@Html.DisplayFor(model => model.Section)</span>
+    </div>
+    <div class="form-group">
+        <span class="input-title">Parent Id:</span>
+        <span>@Html.DisplayFor(model => model.ParentId)</span>
+    </div>
+</div>
 
-    <div>
-        <a asp-action="Index">Back to List</a>
-    </div>
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
 </body>
 
 @section Scripts {
@@ -44,4 +44,3 @@
         item.css("background-size", "cover");
     </script>
 }
-
