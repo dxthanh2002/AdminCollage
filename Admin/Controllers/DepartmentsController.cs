@@ -64,7 +64,7 @@ namespace Admin.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(department);
+            throw new Exception("Model is invalid");
         }
 
         // GET: Departments/Edit/5

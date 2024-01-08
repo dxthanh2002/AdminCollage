@@ -60,6 +60,10 @@ namespace Admin.Controllers
         {
             if (ModelState.IsValid)
             {
+                facility.CreatedAt = DateTime.Now;
+                facility.LastModifiedAt = DateTime.Now;
+                facility.CreatedById = 0;
+                facility.LastModifiedBy = 0;
                 _context.Add(facility);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
