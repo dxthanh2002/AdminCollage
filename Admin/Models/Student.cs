@@ -10,6 +10,8 @@ namespace Admin.Models
         [Key] public int Id { get; set; }
         [DisplayName("Full name")]
         [Required] public string? Name { get; set; }
+        [DisplayName("Email")]
+        [Required] public string? Email { get; set; }
         [DisplayName("Father")]
         [Required] public string? FatherName { get; set; }
         [DisplayName("Mother")]
@@ -32,13 +34,14 @@ namespace Admin.Models
         [DisplayName("Student Previous Education")]
         public string? PreviousEducationId { get; set; }
         [DisplayName("Status")]
+        public bool IsRegister { get; set; } = false;
         public Status Status { get; set; }
         [DisplayName("Create Time")]
         public DateTime CreatedAt { get; set; }
         [DisplayName("Last modified")]
-
+        public int CreatedById { get; set; }
         public DateTime LastModifiedAt { get; set; }
-  
+        public int LastModifiedBy { get; set; }
 
     }
 }
