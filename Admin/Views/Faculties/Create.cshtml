@@ -1,4 +1,4 @@
-﻿@model Admin.Models.Faculty
+@model Faculty
 
 @{
     ViewData["Title"] = "Create";
@@ -7,12 +7,12 @@
 <div class="col-md-12">
     <div class="card card-success">
         <div class="card-header">
-            <h2 class="card-title">Create </h2><br>
+            <h2 class="card-title">Detail </h2><br>
         </div>
         <div class="card-body">
             <div class="card card-default">
                 <div class="card-header">
-                    <h3 class="card-title">Create Faculty</h3>
+                    <h3 class="card-title">Create Course</h3>
                     <div class="card-tools">
                         <button type="button" class="btn btn-tool" data-card-widget="collapse">
                             <i class="fas fa-minus"></i>
@@ -23,11 +23,10 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    <form asp-action="Create">
+                    <form asp-action="Create" enctype="multipart/form-data">
                         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                         <div class="row">
                             <div class="col-md-6">
-                                
                                 <div class="form-group">
                                     <label asp-for="Name" class="control-label"></label>
                                     <input asp-for="Name" class="form-control" />
@@ -35,26 +34,34 @@
                                 </div>
                                 <div class="form-group">
                                     <label asp-for="DepartmentId" class="control-label"></label>
-                                    <select asp-for="DepartmentId" class="form-control" asp-items="ViewBag.departmentid"></select>
-                                    
+                                    <input asp-for="DepartmentId" class="form-control" />
+                                    <span asp-validation-for="DepartmentId" class="text-danger"></span>
                                 </div>
                                 <div class="form-group">
-                                    <label asp-for="Defination" class="control-label"></label>
-                                    <input asp-for="Defination" class="form-control" />
-                                    <span asp-validation-for="Defination" class="text-danger"></span>
+                                    <label asp-for="Email" class="control-label"></label>
+                                    <input asp-for="Email" class="form-control" />
+                                    <span asp-validation-for="Email" class="text-danger"></span>
                                 </div>
                                 <div class="form-group">
-                                    <label asp-for="Qualification" class="control-label"></label>
-                                    <input asp-for="Qualification" class="form-control" />
-                                    <span asp-validation-for="Qualification" class="text-danger"></span>
+                                    <label asp-for="PhoneNumber" class="control-label"></label>
+                                    <input asp-for="PhoneNumber" class="form-control" />
+                                    <span asp-validation-for="PhoneNumber" class="text-danger"></span>
                                 </div>
                                 <div class="form-group">
-                                    <label asp-for="ContactInformation" class="control-label"></label>
-                                    <input asp-for="ContactInformation" class="form-control" />
-                                    <span asp-validation-for="ContactInformation" class="text-danger"></span>
+                                    <label asp-for="Address" class="control-label"></label>
+                                    <input asp-for="Address" class="form-control" />
+                                    <span asp-validation-for="Address" class="text-danger"></span>
                                 </div>
-
-
+                                <div class="form-group">
+                                    <label asp-for="Description" class="control-label"></label>
+                                    <input asp-for="Description" class="form-control" />
+                                    <span asp-validation-for="Description" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="Detail" class="control-label"></label>
+                                    <input asp-for="Detail" class="form-control" />
+                                    <span asp-validation-for="Detail" class="text-danger"></span>
+                                </div> 
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
@@ -69,18 +76,6 @@
                                     </select>
                                     <span asp-validation-for="Status" class="text-danger"></span>
                                 </div>
-                                <div class="form-group">
-                                    <label asp-for="CreatedAt" class="control-label"></label>
-                                    <input asp-for="CreatedAt" class="form-control" />
-                                    <span asp-validation-for="CreatedAt" class="text-danger"></span>
-                                </div>
-
-                                <div class="form-group">
-                                    <label asp-for="LastModifiedAt" class="control-label"></label>
-                                    <input asp-for="LastModifiedAt" class="form-control" />
-                                    <span asp-validation-for="LastModifiedAt" class="text-danger"></span>
-                                </div>
-
                             </div>
                         </div>
                         <div class="row">
@@ -88,15 +83,15 @@
                                 <div class="card card-outline card-info">
                                     <div class="card-header">
                                         <h3 class="card-title">
-                                            Description
+                                            Detail
                                         </h3>
                                     </div>
                                     <!-- /.card-header -->
                                     <div class="card-body">
-                                        <textarea asp-for="Description" id="editorr" class="col-md-12">
+                                        <textarea asp-for="Detail" id="editorr" class="col-md-12">
                                     Text a note in <strong>there!</strong>
                             </textarea>
-                                        <span asp-validation-for="Description" class="text-danger"></span>
+                                        <span asp-validation-for="Detail" class="text-danger"></span>
                                     </div>
                                     <div class="card-footer">
                                         Write about description.
@@ -105,6 +100,8 @@
                             </div>
                             <!-- /.col-->
                         </div>
+
+
                         <div class="form-group">
                             <input type="submit" value="Create" class="btn btn-primary" />
                         </div>
@@ -128,3 +125,4 @@
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
+

@@ -22,8 +22,8 @@ namespace Admin.Controllers
         // GET: Faculties
         public async Task<IActionResult> Index()
         {
-            var databaseContext = _context.Faculties.Include(f => f.Department);
-            return View(await databaseContext.ToListAsync());
+            var databaseContext = await _context.Faculties?.ToListAsync();
+            return View(databaseContext);
 
         }
 
@@ -49,7 +49,6 @@ namespace Admin.Controllers
         // GET: Faculties/Create
         public IActionResult Create()
         {
-            ViewData["departmentid"] = new SelectList(_context.Departments, "Id", "Name");
             return View();
         }
 
@@ -58,10 +57,12 @@ namespace Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,DepartmentId,Defination,Qualification,ContactInformation,Description,Status,CreatedById,CreatedAt,LastModifiedAt,LastModifiedBy")] Faculty faculty)
+        public async Task<IActionResult> Create([Bind("Id,Name,DepartmentId,Qualification,ContactInformation,Description,Status,CreatedById,LastModifiedBy")] Faculty faculty)
         {
             if (ModelState.IsValid)
             {
+                faculty.CreatedAt = DateTime.Now;
+                faculty.LastModifiedAt = DateTime.Now;
                 _context.Add(faculty);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
