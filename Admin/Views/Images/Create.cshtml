@@ -78,15 +78,19 @@
     var parentId = document.getElementById("parentId");
     
     $("#file").change(function() {
+        if (formData.get("File")) formData.delete("File");
         formData.append("File", file.files[0]);
     });
     $("#page").change(function() {
+        if (formData.get("Page")) formData.delete("Page");
         formData.append("Page", page.value);
     });
     $("#section").change(function() {
+        if (formData.get("Section")) formData.delete("Section");
         formData.append("Section", section.value);
     });
     $("#parentId").change(function() {
+        if (formData.get("ParentId")) formData.delete("ParentId");
         formData.append("ParentId", parentId.value);
     });
     
