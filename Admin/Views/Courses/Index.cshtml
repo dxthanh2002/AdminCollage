@@ -30,9 +30,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.EligibilityCriteria)
             </th>
-            <th>
-             @Html.DisplayNameFor(model => model.Thumbnail)
-            </th>
+
             <th>
                 @Html.DisplayNameFor(model => model.Status)
             </th>
@@ -62,9 +60,6 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.EligibilityCriteria)
-            </td>
-            <td>
-                  <img src="data:Thumbnail;base64,@item.Thumbnail" width="160px" height="90px";" />
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Status)
