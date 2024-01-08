@@ -781,6 +781,10 @@
       "PackagePath": "staticwebassets\\ckeditor5\\translations\\zh.js"
     },
     {
+      "Id": "D:\\ASP.net\\AdminCollage\\Admin\\wwwroot\\css\\image-edit.css",
+      "PackagePath": "staticwebassets\\css\\image-edit.css"
+    },
+    {
       "Id": "D:\\ASP.net\\AdminCollage\\Admin\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

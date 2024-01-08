@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "vKAynDjOg+COJOGhs3aE72qZyD78lr4MYLW+qEvvWCM=",
+  "Hash": "n6GJ+3rKZXSNFK4x8PoCvNEymIZ11J3VdCOpIZIWRN4=",
   "Source": "Admin",
   "BasePath": "_content/Admin",
   "Mode": "Default",
@@ -3347,6 +3347,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\ckeditor5\\translations\\zh-cn.js"
+    },
+    {
+      "Identity": "D:\\ASP.net\\AdminCollage\\Admin\\wwwroot\\css\\image-edit.css",
+      "SourceId": "Admin",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\ASP.net\\AdminCollage\\Admin\\wwwroot\\",
+      "BasePath": "_content/Admin",
+      "RelativePath": "css/image-edit.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\image-edit.css"
     },
     {
       "Identity": "D:\\ASP.net\\AdminCollage\\Admin\\wwwroot\\css\\site.css",

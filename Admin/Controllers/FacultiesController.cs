@@ -58,7 +58,7 @@ namespace Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,DepartmentId,Defination,Qualification,ContactInformation,Description,Status,CreatedById,CreatedAt,LastModifiedAt,LastModifiedBy")] Faculty faculty)
+        public async Task<IActionResult> Create([Bind("Id,Name,DepartmentId,Email,PhoneNumber,Address,Description,Detail,Status,CreatedById,CreatedAt,LastModifiedAt,LastModifiedBy")] Faculty faculty)
         {
             if (ModelState.IsValid)
             {

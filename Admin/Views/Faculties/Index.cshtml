@@ -19,14 +19,18 @@
                 @Html.DisplayNameFor(model => model.Name)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Defination)
+                @Html.DisplayNameFor(model => model.Email)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Qualification)
+                @Html.DisplayNameFor(model => model.PhoneNumber)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ContactInformation)
+                @Html.DisplayNameFor(model => model.Address)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+
             <th>
                 @Html.DisplayNameFor(model => model.Description)
             </th>
@@ -51,17 +55,20 @@
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Defination)
+                            @Html.DisplayFor(modelItem => item.Email)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Qualification)
+                            @Html.DisplayFor(modelItem => item.PhoneNumber)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ContactInformation)
+                            @Html.DisplayFor(modelItem => item.Address)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Description)
             </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Detail)
+                        </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Status)
             </td>

@@ -39,21 +39,26 @@
                                     <span asp-validation-for="Department" class="text-danger"></span>
                                 </div>
                                 <div class="form-group">
-                                    <label asp-for="Defination" class="control-label"></label>
-                                    <input asp-for="Defination" class="form-control" />
-                                    <span asp-validation-for="Defination" class="text-danger"></span>
+                                    <label asp-for="Email" class="control-label"></label>
+                                    <input asp-for="Email" class="form-control" />
+                                    <span asp-validation-for="Email" class="text-danger"></span>
                                 </div>
                                 <div class="form-group">
-                                    <label asp-for="Qualification" class="control-label"></label>
-                                    <input asp-for="Qualification" class="form-control" />
-                                    <span asp-validation-for="Qualification" class="text-danger"></span>
+                                    <label asp-for="PhoneNumber" class="control-label"></label>
+                                    <input asp-for="PhoneNumber" class="form-control" />
+                                    <span asp-validation-for="PhoneNumber" class="text-danger"></span>
                                 </div>
                                 <div class="form-group">
-                                    <label asp-for="ContactInformation" class="control-label"></label>
-                                    <input asp-for="ContactInformation" class="form-control" />
-                                    <span asp-validation-for="ContactInformation" class="text-danger"></span>
+                                    <label asp-for="Address" class="control-label"></label>
+                                    <input asp-for="Address" class="form-control" />
+                                    <span asp-validation-for="Address" class="text-danger"></span>
                                 </div>
 
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Description" class="control-label"></label>
+                                <input asp-for="Description" class="form-control" />
+                                <span asp-validation-for="Description" class="text-danger"></span>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
@@ -87,18 +92,18 @@
                                 <div class="card card-outline card-info">
                                     <div class="card-header">
                                         <h3 class="card-title">
-                                            Description
+                                            Detail
                                         </h3>
                                     </div>
                                     <!-- /.card-header -->
                                     <div class="card-body">
-                                        <textarea asp-for="Description" id="editorr" class="col-md-12">
+                                        <textarea asp-for="Detail" id="editorr" class="col-md-12">
                                     Text a note in <strong>there!</strong>
                             </textarea>
-                                        <span asp-validation-for="Description" class="text-danger"></span>
+                                        <span asp-validation-for="Detail" class="text-danger"></span>
                                     </div>
                                     <div class="card-footer">
-                                        Write about description.
+                                        Write about detail.
                                     </div>
                                 </div>
                             </div>
