@@ -28,13 +28,9 @@ class MyUploadAdapter {
     _initRequest() {
         const xhr = this.xhr = new XMLHttpRequest();
 
-        // Note that your request may look different. It is up to you and your editor
-        // integration to choose the right communication channel. This example uses
-        // a POST request with JSON as a data structure but your configuration
-        // could be different.
-        xhr.open('POST', 'http://localhost:5080/api/Image', true);
+        xhr.open('POST', 'https://localhost:7060/api/Image/UploadImgCkEditor', true);
         xhr.responseType = 'json';
-    }
+    } 
     // Initializes XMLHttpRequest listeners.
     _initListeners(resolve, reject, file) {
         const xhr = this.xhr;
@@ -98,9 +94,14 @@ function MyCustomUploadAdapterPlugin(editor) {
         return new MyUploadAdapter(loader);
     };
 }
+
+var myEditor;
+
 ClassicEditor
     .create(document.querySelector('#editorr'), {
         extraPlugins: [MyCustomUploadAdapterPlugin],
+    }).then(editor => {
+        myEditor = editor
     })
     .catch(error => {
         console.error(error);
