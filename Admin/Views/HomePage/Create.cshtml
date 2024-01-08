@@ -78,6 +78,7 @@
     // var parentId = document.getElementById("parentId");
     
     $("#file").change(function() {
+        if (formData.get("File")) formData.delete("File");
         formData.append("File", file.files[0]);
     });
     formData.append("Page", "home");
@@ -96,12 +97,11 @@
                 processData: false,
                 success: function (data) {
                     alert("Image uploaded successfully!");
-                    window.location.href = "/Images/Index";
+                    window.location.href = "/HomePage/Index";
                 },
                 fail: function (data) {
                     alert("Image upload failed!");
                 }
-                
             });
         });
     });
