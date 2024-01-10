@@ -1,115 +1,227 @@
-﻿@model IEnumerable<Admin.Models.Admission>
+﻿@model IEnumerable<Admin.Models.AdmissionResponse>
 
 @{
     ViewData["Title"] = "Index";
+    var Departments = ViewBag.Departments;
+    var model = Model;
 }
 
 <div class="card">
     <div class="card-header">
         <h3 class="card-title">DataTable for Admission</h3>
     </div>
-    <div class="card-body">
-        <table id="example1" class="table table-bordered table-striped">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Name)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FatherName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.MotherName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Dob)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Gender)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ResAddress)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PerAddress)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.AdmissionFor)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.University)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.EnrollmentNumber)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.MarkSecured)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Status)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CreatedAt)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.LastModifiedAt)
-            </th>
 
-            <th>Action</th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FatherName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.MotherName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Dob)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Gender)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ResAddress)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PerAddress)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.AdmissionFor)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.University)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.EnrollmentNumber)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.MarkSecured)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Status)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CreatedAt)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.LastModifiedAt)
-            </td>
-            <td>
-                 <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-secondary"><i class="fa fa-eye"></i>Details</a> |
-                            <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger"><i class="fas fa-trash-alt"></i>Delete</a>
-            </td>
-        </tr>
+    <div class="card-body">
+        <div class="row mb-4 align-items-center">
+            <div class="col-sm-4">
+                <label>
+                    Mark Secured From <input type="text" id="msMin" name="msMin" placeholder="0" class="form-control"/>
+                </label>
+                <label>
+                    To <input type="text" id="msMax" name="msMax" placeholder="0" class="form-control"/>
+                </label>
+            </div>
+            <div class="col-sm-4">
+                <label>
+                    Dob From <input type="date" id="dobMin" name="dobMin" placeholder="0" class="form-control"/>
+                </label>
+                <label>
+                    To <input type="date" id="dobMax" name="dobMax" placeholder="0" class="form-control"/>
+                </label>
+            </div>
+            <div class="col-sm-2">
+                <label>
+                    Admission For
+                    <select id="admissionFor" name="admissionFor" class="form-control" style="width: 150px">
+                        <option value="">Select</option>
+                        @foreach (var item in Departments)
+                        {
+                            <option value="@item.Id">@item.Name</option>
+                        }
+                    </select>
+                </label>
+            </div>
+
+            <div>
+                <button type="button" id="filter" class="btn btn-primary" value="Filter">Filter</button>
+            </div>
+
+            <div class="col-sm-4">
+                @* <label> *@
+                @*     Mark Secured From <input type="text" id="msMin" name="msMin" placeholder="0" class="form-control"/> *@
+                @* </label> *@
+                @* <label> *@
+                @*     To <input type="text" id="msMax" name="msMax" placeholder="0" class="form-control"/> *@
+                @* </label> *@
+            </div>
+            <div class="col-sm-4">
+                <label>
+                    Submit From <input type="date" id="smMin" name="smMin" placeholder="0" class="form-control"/>
+                </label>
+                <label>
+                    To <input type="date" id="smMax" name="smMax" placeholder="0" class="form-control"/>
+                </label>
+            </div>
+            <div class="col-sm-2">
+                <label>
+                    Status
+                    <select id="status" name="status" class="form-control" style="width: 150px">
+                        <option value="">Select</option>
+                        <option value="PENDING">PENDING</option>
+                        <option value="APPROVED">APPROVED</option>
+                        <option value="REJECTED">REJECTED</option>
+                    </select>
+                </label>
+            </div>
+
+            @* <div> *@
+            @*     <button type="button" id="filter" class="btn btn-primary" value="Filter">Filter</button> *@
+            @* </div> *@
+        </div>
+
+        <table id="example1" class="table table-bordered table-striped">
+            <thead>
+            <tr>
+                <th>
+                    Full Name
+                </th>
+                <th>
+                    Email
+                </th>
+                <th>
+                    Father
+                </th>
+                <th>
+                    Mother
+                </th>
+                <th>
+                    Date of Birth
+                </th>
+                <th>
+                    Gender
+                </th>
+                <th>
+                    Residential Address
+                </th>
+                <th>
+                    Permanent Address
+                </th>
+                <th>
+                    Admission For
+                </th>
+                <th>
+                    University
+                </th>
+                <th>
+                    Enrollment Number
+                </th>
+                <th>
+                    Mark Secured
+                </th>
+                <th>
+                    Status
+                </th>
+                <th>Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach (var item in model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FatherName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MotherName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Dob)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Gender)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ResAddress)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PerAddress)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Department)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.University)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EnrollmentNumber)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MarkSecured)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Status)
+                    </td>
+                    <td>
+                        <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-secondary"><i class="fa fa-eye"></i>Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger"><i class="fas fa-trash-alt"></i>Delete</a>
+                    </td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@section Scripts
+{
+    <script type="text/javascript">
+        let baseurl = "http://localhost:5080/api/admission/";
+        $(document).ready(function () {
+            $("#filter").click(function () {
+                var msMin = $("#msMin").val();
+                var msMax = $("#msMax").val();
+                var dobMin = $("#dobMin").val();
+                var dobMax = $("#dobMax").val();
+                var smMin = $("#smMin").val();
+                var smMax = $("#smMax").val();
+                var status = $("#status").val();
+                var admissionFor = $("#admissionFor").val();
+                var url = baseurl + "filter?msMin=" + msMin + "&msMax=" + msMax + "&dobMin=" + dobMin + "&dobMax=" + dobMax + "&admissionFor=" + admissionFor + "&status=" + status + "&smMin=" + smMin + "&smMax=" + smMax;
+                $.ajax({
+                    url: url,
+                    type: "GET",
+                    success: function (data) {
+                        var filtered = data.response;
+                        $("#example1 tbody").empty();
+                        $.each(filtered, function (index, item) {
+                            var row = $("<tr></tr>");
+                            row.append("<td>" + item.name + "</td>");
+                            row.append("<td>" + item.fatherName + "</td>");
+                            row.append("<td>" + item.motherName + "</td>");
+                            row.append("<td>" + item.dob + "</td>");
+                            row.append("<td>" + item.gender + "</td>");
+                            row.append("<td>" + item.resAddress + "</td>");
+                            row.append("<td>" + item.perAddress + "</td>");
+                            row.append("<td>" + item.admissionFor + "</td>");
+                            row.append("<td>" + item.university + "</td>");
+                            row.append("<td>" + item.enrollmentNumber + "</td>");
+                            row.append("<td>" + item.markSecured + "</td>");
+                            row.append("<td>" + item.status + "</td>");
+                            row.append("<td><a href='/Admissions/Details/" + item.id + "' class='btn btn-secondary'><i class='fa fa-eye'></i>Details</a> | <a href='/Delete/" + item.id + "' class='btn btn-danger'><i class='fas fa-trash-alt'></i>Delete</a></td>");
+                            row.append()
+                            // Append the row to the table
+                            $("#example1 tbody").append(row);
+                        });
+                       
+                    },  
+                });
+            })
+        });
+    </script>
 }
-    </tbody>
-</table>
-</div>
-</div>
