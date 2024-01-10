@@ -28,7 +28,7 @@ class MyUploadAdapter {
     _initRequest() {
         const xhr = this.xhr = new XMLHttpRequest();
 
-        xhr.open('POST', 'https://localhost:7060/api/Image/UploadImgCkEditor', true);
+        xhr.open('POST', 'http://localhost:5080/api/Image/UploadImgCkEditor', true);
         xhr.responseType = 'json';
     } 
     // Initializes XMLHttpRequest listeners.
