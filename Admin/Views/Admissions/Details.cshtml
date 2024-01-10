@@ -1,4 +1,4 @@
-﻿@model Admin.Models.Admission
+﻿@model Admin.Models.AdmissionResponse
 @inject IHttpContextAccessor HttpContextAccessor
 
 @{
@@ -8,6 +8,31 @@
 }
 <head>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <style>
+        .modals {
+            display:    none;
+            position:   fixed;
+            z-index:    1000;
+            top:        0;
+            left:       0;
+            height:     100%;
+            width:      100%;
+            background: rgba( 255, 255, 255, .8 )
+            url('https://i.stack.imgur.com/FhHRx.gif')
+            50% 50%
+            no-repeat;
+        }
+        body.loading {
+            overflow: hidden;
+        }
+        body.loading .modals {
+            display: block;
+        }
+        
+        body {
+          background-color: #e1e1e1;
+        }
+    </style>
 </head>
 <body>
 <div class="col-md-12">
@@ -33,115 +58,115 @@
                         @Html.DisplayFor(model => model.Email)
                     </dd>
                     <dt class="col-sm-2">
-                        @Html.DisplayNameFor(model => model.FatherName)
+                        Father Name
                     </dt>
                     <dd class="col-sm-10">
                         @Html.DisplayFor(model => model.FatherName)
                     </dd>
                     <dt class="col-sm-2">
-                        @Html.DisplayNameFor(model => model.MotherName)
+                        Mother Name
                     </dt>
                     <dd class="col-sm-10">
                         @Html.DisplayFor(model => model.MotherName)
                     </dd>
                     <dt class="col-sm-2">
-                        @Html.DisplayNameFor(model => model.Dob)
+                        Date of Birth
                     </dt>
                     <dd class="col-sm-10">
                         @Html.DisplayFor(model => model.Dob)
                     </dd>
                     <dt class="col-sm-2">
-                        @Html.DisplayNameFor(model => model.Gender)
+                        Gender
                     </dt>
                     <dd class="col-sm-10">
                         @Html.DisplayFor(model => model.Gender)
                     </dd>
                     <dt class="col-sm-2">
-                        @Html.DisplayNameFor(model => model.ResAddress)
+                        Residential Address
                     </dt>
                     <dd class="col-sm-10">
                         @Html.DisplayFor(model => model.ResAddress)
                     </dd>
                     <dt class="col-sm-2">
-                        @Html.DisplayNameFor(model => model.PerAddress)
+                        Permanent Address
                     </dt>
                     <dd class="col-sm-10">
                         @Html.DisplayFor(model => model.PerAddress)
                     </dd>
                     <dt class="col-sm-2">
-                        @Html.DisplayNameFor(model => model.AdmissionFor)
+                        Admission For
                     </dt>
                     <dd class="col-sm-10">
-                        @Html.DisplayFor(model => model.AdmissionFor)
+                        @Html.DisplayFor(model => model.Department)
                     </dd>
                     <dt class="col-sm-2">
-                        @Html.DisplayNameFor(model => model.University)
+                        University
                     </dt>
                     <dd class="col-sm-10">
                         @Html.DisplayFor(model => model.University)
                     </dd>
                     <dt class="col-sm-2">
-                        @Html.DisplayNameFor(model => model.EnrollmentNumber)
+                        Enrollment Number
                     </dt>
                     <dd class="col-sm-10">
                         @Html.DisplayFor(model => model.EnrollmentNumber)
                     </dd>
                     <dt class="col-sm-2">
-                        @Html.DisplayNameFor(model => model.Center)
+                        Center
                     </dt>
                     <dd class="col-sm-10">
                         @Html.DisplayFor(model => model.Center)
                     </dd>
                     <dt class="col-sm-2">
-                        @Html.DisplayNameFor(model => model.Stream)
+                        Stream
                     </dt>
                     <dd class="col-sm-10">
                         @Html.DisplayFor(model => model.Stream)
                     </dd>
                     <dt class="col-sm-2">
-                        @Html.DisplayNameFor(model => model.Field)
+                        Field
                     </dt>
                     <dd class="col-sm-10">
                         @Html.DisplayFor(model => model.Field)
                     </dd>
                     <dt class="col-sm-2">
-                        @Html.DisplayNameFor(model => model.MarkSecured)
+                        Mark Secured
                     </dt>
                     <dd class="col-sm-10">
                         @Html.DisplayFor(model => model.MarkSecured)
                     </dd>
                     <dt class="col-sm-2">
-                        @Html.DisplayNameFor(model => model.OutOf)
+                        Out Of
                     </dt>
                     <dd class="col-sm-10">
                         @Html.DisplayFor(model => model.OutOf)
                     </dd>
                     <dt class="col-sm-2">
-                        @Html.DisplayNameFor(model => model.ClassObtained)
+                        Class Obtained
                     </dt>
                     <dd class="col-sm-10">
                         @Html.DisplayFor(model => model.ClassObtained)
                     </dd>
                     <dt class="col-sm-2">
-                        @Html.DisplayNameFor(model => model.SportDetail)
+                        Sport Detail
                     </dt>
                     <dd class="col-sm-10">
                         @Html.DisplayFor(model => model.SportDetail)
                     </dd>
                     <dt class="col-sm-2">
-                        @Html.DisplayNameFor(model => model.Status)
+                        Status
                     </dt>
                     <dd class="col-sm-10">
                         @Html.DisplayFor(model => model.Status)
                     </dd>
                     <dt class="col-sm-2">
-                        @Html.DisplayNameFor(model => model.CreatedAt)
+                        Created At
                     </dt>
                     <dd class="col-sm-10">
                         @Html.DisplayFor(model => model.CreatedAt)
                     </dd>
                     <dt class="col-sm-2">
-                        @Html.DisplayNameFor(model => model.LastModifiedAt)
+                        Last Modified At
                     </dt>
                     <dd class="col-sm-10">
                         @Html.DisplayFor(model => model.LastModifiedAt)
@@ -150,7 +175,7 @@
             </div>
             <div>
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Approve</button>
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#rejectModal">Reject</button>
+                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#rejectModal">Reject</button>
 
                 <a asp-action="Index">Back to List</a>
             </div>
@@ -198,8 +223,11 @@
             </div>
         </div>
         <!-- /.card-body -->
+   <div id="spinner" class="modals"><!-- Place at bottom of page --></div>
+        
     </div>
     <!-- /.card -->
+    
 </div>
 
 @section Scripts {
@@ -207,38 +235,68 @@
         var id = @Model.Id;
         console.log(id)
         $(document).ready(function () {
-            $("#approval").click(function () {
-                console.log($("#approval"))
-                $.ajax({
-                    type: 'PUT',
-                        url: `http://localhost:5080/api/Admission/${id}/Approved`,
-                    contentType: 'application/json; charset=utf-8',
-                    dataType: 'json',
-                    headers: {
-                        Authorization: `Bearer @token`
-                    },
-                    success: function (data) {
-                        window.location.href = "/Admissions/Index";
-                    }
-                });
-                console.log("approval")
-            });
-
-            $("#rejection").click(function () {
-                $.ajax({
-                    type: "PUT",
-                    url: `http://localhost:5080/api/Admission/${id}/Rejected`,
-                    contentType: 'application/json; charset=utf-8',
-                    dataType: 'json',
-                    headers: {
-                        Authorization: `Bearer @token`
-                    },
-                    success: function (data) {
-                        window.location.href = "/Admissions/Index";
-                    }
-                });
+       
+        $("#approval").click(function () {
+            showSpinner();
+            $("#exampleModal").hide();
+            $.ajax({
+                type: 'PUT',
+                url: `http://localhost:5080/api/Admission/${id}/Approved`,
+                contentType: 'application/json; charset=utf-8',
+                dataType: 'json',
+                headers: {
+                    Authorization: `Bearer @token`
+                },
+                success: function (data) {
+                    hideSpinner();
+                    alert("Admission Approved")
+                    window.location.href = "/Admissions/Index";
+                },
+                error: function (error) {
+                    hideSpinner();
+                    alert("Something went wrong")
+                }
             });
         });
+
+        $("#rejection").click(function () {
+            showSpinner();
+            $("#rejectModal").hide();
+            $.ajax({
+                type: "PUT",
+                url: `http://localhost:5080/api/Admission/${id}/Rejected`,
+                contentType: 'application/json; charset=utf-8',
+                dataType: 'json',
+                headers: {
+                    Authorization: `Bearer @token`
+                },
+                success: function (data) {
+                    hideSpinner();
+                    alert("Admission Rejected")
+                    window.location.href = "/Admissions/Index";
+                },
+                error: function (error) {
+                    hideSpinner();
+                    alert("Something went wrong")
+                }
+            });
+        });
+        
+        function showSpinner() {
+            $('#spinner').show();
+            console.log("show")
+        }
+        
+        function hideSpinner() {
+            $('#spinner').hide();
+            console.log("hide")
+        }
+
+
+        })
+
+          
+
     </script>
 }
 

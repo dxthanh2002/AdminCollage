@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Admin.Data;
+using Admin.Models;
+using AutoMapper;
 using Microsoft.Extensions.Options;
 
 namespace Admin.Controllers
@@ -8,18 +10,31 @@ namespace Admin.Controllers
     public class AdmissionsController : Controller
     {
         private readonly DatabaseContext _context;
+        private readonly IMapper _mapper;
         
-        public AdmissionsController(DatabaseContext context)
+        public AdmissionsController(DatabaseContext context, IMapper mapper)
         {
             _context = context;
+            _mapper = mapper;
         }
 
         // GET: Admissions
         public async Task<IActionResult> Index()
         {
-            return _context.Admissions != null
-                ? View(await _context.Admissions.ToListAsync())
-                : Problem("Entity set 'DatabaseContext.Admissions'  is null.");
+            var admission = await _context.Admissions?.ToListAsync()!;
+            var department = await _context.Departments?.ToListAsync()!;
+            var admissionModel = _mapper.Map<List<AdmissionResponse>>(admission);
+            foreach (var t in department)
+            {
+                foreach (var t1 in admissionModel.Where(t1 => t.Id == t1.AdmissionFor))
+                {
+                    t1.Department = t.Name;
+                }
+            }
+            ViewBag.Departments = department;
+            ViewBag.Status = new List<string> { "PENDING", "APPROVED", "REJECTED" };
+            
+            return View(admissionModel.OrderByDescending(x => x.CreatedAt));
         }
 
         // GET: Admissions/Details/5
@@ -36,8 +51,10 @@ namespace Admin.Controllers
             {
                 return NotFound();
             }
-
-            return View(admission);
+            var admissionModel = _mapper.Map<AdmissionResponse>(admission);
+            var department = await _context.Departments?.FirstOrDefaultAsync(item => item.Id == admissionModel.AdmissionFor)!;
+            admissionModel.Department = department?.Name!;
+            return View(admissionModel);
         }
         
         // GET: Admissions/Delete/5

@@ -3,6 +3,7 @@
 @{
     ViewData["Title"] = "Create";
 }
+<link rel="stylesheet" href="~/css/site.css"/>
 
 <div class="col-md-12">
     <div class="card card-success">
@@ -29,17 +30,17 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label asp-for="Name" class="control-label"></label>
-                                    <input asp-for="Name" class="form-control" />
+                                    <input asp-for="Name" class="form-control"/>
                                     <span asp-validation-for="Name" class="text-danger"></span>
                                 </div>
                                 <div class="form-group">
                                     <label asp-for="HeadOfDepartment" class="control-label"></label>
-                                    <input asp-for="HeadOfDepartment" class="form-control" />
+                                    <input asp-for="HeadOfDepartment" class="form-control"/>
                                     <span asp-validation-for="HeadOfDepartment" class="text-danger"></span>
                                 </div>
                                 <div class="form-group">
                                     <label asp-for="ContactInformation" class="control-label"></label>
-                                    <input asp-for="ContactInformation" class="form-control" />
+                                    <input asp-for="ContactInformation" class="form-control"/>
                                     <span asp-validation-for="ContactInformation" class="text-danger"></span>
                                 </div>
 
@@ -58,18 +59,6 @@
                                     </select>
                                     <span asp-validation-for="Status" class="text-danger"></span>
                                 </div>
-                                <div class="form-group">
-                                    <label asp-for="CreatedAt" class="control-label"></label>
-                                    <input asp-for="CreatedAt" class="form-control" />
-                                    <span asp-validation-for="CreatedAt" class="text-danger"></span>
-                                </div>
-
-                                <div class="form-group">
-                                    <label asp-for="LastModifiedAt" class="control-label"></label>
-                                    <input asp-for="LastModifiedAt" class="form-control" />
-                                    <span asp-validation-for="LastModifiedAt" class="text-danger"></span>
-                                </div>
-
                             </div>
                         </div>
 
@@ -96,7 +85,7 @@
                             <!-- /.col-->
                         </div>
                         <div class="form-group">
-                            <input type="submit" value="Create" class="btn btn-primary" />
+                            <input type="submit" value="Create" class="btn btn-primary"/>
                         </div>
                     </form>
                 </div>
@@ -116,5 +105,70 @@
 
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+    <script type="text/javascript">
+    var baseUrl = "http://localhost:5080/api/image";
+    var formData = new FormData();
+    
+    $('input[name="upload-img"]').on('change', function(){
+      readURL(this, $('.file-wrapper'));  //Change the image
+    });
+    
+    $('.close-btn').on('click', function(){ //Unset the image
+       let file = $('input[name="upload-img"]');
+       let fileWrapper = $('.file-wrapper');
+       fileWrapper?.css('background-image', 'unset');
+       fileWrapper?.removeClass('file-set');
+       file.replaceWith( file = file.clone( true ) );
+    });
+    
+    //FILE
+    function readURL(input, obj) {
+      if (input.files && input.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function(e) {
+          obj.css('background-image', 'url('+e.target.result+')');
+          obj.addClass('file-set');
+        }
+        reader.readAsDataURL(input.files[0]);
+      }
+    }
+    
+    var file = document.getElementById("file");
+    var page = "Department";
+    var section = "Thumbnail";
+    // var parentId = @Model?.Id;
+    
+    $("#file").change(function() {
+        if (formData.get("File")) formData.delete("File");
+        formData.append("File", file.files[0]);
+    });
+    $("#page").change(function() {
+        if (formData.get("Page")) formData.delete("Page");
+        formData.append("Page", page.value);
+    });
+    $("#section").change(function() {
+        if (formData.get("Section")) formData.delete("Section");
+        formData.append("Section", section.value);
+    });
+    $("#parentId").change(function() {
+        if (formData.get("ParentId")) formData.delete("ParentId");
+        formData.append("ParentId", parentId.value);
+    });
+    
+    $(document).ready(function () {
+        $("#upload").click(function() {
+            $.ajax({
+                url: baseUrl,
+                type: "POST",
+                data: formData,
+                contentType: false,
+                processData: false,
+                success: function (data) {
+                    window.location.href = "/Images/Index";
+                }
+            });
+        });
+    });
+  </script>
 }
